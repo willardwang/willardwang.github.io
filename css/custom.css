@@ -1,0 +1,98 @@
+/* your styles go here */
+
+/* footer固定 */
+html,body{
+  height: 100%;
+}
+#all{
+  height: 100%;
+  min-height: 100%;
+}
+#content{
+  min-height: calc(100% - 268px);
+}
+
+.box-image-text .image {
+  min-height: 200px;
+  max-height: 200px;
+}
+
+.box-simple {
+  min-height: 230px;
+}
+
+/* banner图层的透明度 */
+.home-carousel .dark-mask {
+  opacity: 0.8;
+}
+
+/* footer版权区域的高度 */
+#copyright {
+  padding: 10px 0;
+}
+
+/* banner和近期博客模块之间的高度 */
+.bar {
+  padding: 0;
+}
+.heading {
+  margin-bottom: 0; 
+}
+
+/* list.html和single.html头部的贯穿图片 */
+#heading-breadcrumbs {
+  background: url(../img/texture-green.png) center center repeat;
+}
+
+/* 页内锚点顶部不被nav隐藏 */
+#post-content h1, #post-content h2, #post-content h3, #post-content h4, #post-content h5 {
+  padding-top: 77px;
+  margin-top: -77px;
+}
+
+/* toc */
+#TableOfContents ul{
+  list-style-type: decimal;
+  padding-inline-start: 30px;
+}
+.toc{
+  position: fixed; 
+  max-width: 262px;
+  overflow-y: auto;
+}
+.toc.affix{
+  top: 80px;
+  bottom: 63px;
+}
+.toc.affix-top{
+  top: 220px;
+}
+
+/* sidebar悬浮 */
+.custom-sidebar{
+  position: fixed; 
+  max-width: 262px;
+  overflow-y: auto;
+  bottom: 63px;
+}
+.custom-sidebar.affix{
+  top: 80px;
+}
+.custom-sidebar.affix-top{
+  top: 220px;
+}
+
+/* list row tag */
+.panel-body.left{
+  width: calc(100% - 84px);
+  float: left;
+}
+.read-more.right{
+  float: right;
+}
+
+/* breadcrumbs字体 */
+#heading-breadcrumbs h1{
+  font-family: cursive;
+  color: #558855;
+}
