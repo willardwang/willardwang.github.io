@@ -2,47 +2,47 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on 王石宝的博客</title>
-    <link>https://www.wangyuanyou.org/categories/</link>
+    <link>https://www.wangyuanyou.com/categories/</link>
     <description>Recent content in Categories on 王石宝的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     
-	<atom:link href="https://www.wangyuanyou.org/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.wangyuanyou.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Lorem</title>
-      <link>https://www.wangyuanyou.org/categories/lorem/</link>
+      <link>https://www.wangyuanyou.com/categories/lorem/</link>
       <pubDate>Sat, 10 Oct 2015 13:07:31 +0200</pubDate>
       
-      <guid>https://www.wangyuanyou.org/categories/lorem/</guid>
+      <guid>https://www.wangyuanyou.com/categories/lorem/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Programming</title>
-      <link>https://www.wangyuanyou.org/categories/programming/</link>
+      <link>https://www.wangyuanyou.com/categories/programming/</link>
       <pubDate>Fri, 02 Oct 2015 21:49:20 +0200</pubDate>
       
-      <guid>https://www.wangyuanyou.org/categories/programming/</guid>
+      <guid>https://www.wangyuanyou.com/categories/programming/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Pseudo</title>
-      <link>https://www.wangyuanyou.org/categories/pseudo/</link>
+      <link>https://www.wangyuanyou.com/categories/pseudo/</link>
       <pubDate>Mon, 03 Aug 2015 13:39:46 +0200</pubDate>
       
-      <guid>https://www.wangyuanyou.org/categories/pseudo/</guid>
+      <guid>https://www.wangyuanyou.com/categories/pseudo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Starting</title>
-      <link>https://www.wangyuanyou.org/categories/starting/</link>
+      <link>https://www.wangyuanyou.com/categories/starting/</link>
       <pubDate>Wed, 24 Jun 2015 13:50:46 +0200</pubDate>
       
-      <guid>https://www.wangyuanyou.org/categories/starting/</guid>
+      <guid>https://www.wangyuanyou.com/categories/starting/</guid>
       <description></description>
     </item>
     
