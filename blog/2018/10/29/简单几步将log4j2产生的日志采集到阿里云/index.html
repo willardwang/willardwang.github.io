@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>简单几步将log4j2产生的日志采集到阿里云</title>
+  <meta name="author" content="" />
+
+  
+  <meta name="keywords" content="王石宝, blog">	
+  
+
+  
+  <meta name="description" content="王石宝的博客">	
+  
+
+  <meta name="generator" content="Hugo 0.49.2" />
+
+  
+  
+  <link href="/css/fonts.googleapis.css" rel='stylesheet' type='text/css'>
+
+  
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  
+  <link href="/css/animate.css" rel="stylesheet">
+
+  
+  
+    <link href="/css/style.blue.css" rel="stylesheet" id="theme-stylesheet">
+  
+
+
+  
+  <link href="/css/custom.css" rel="stylesheet">
+
+  
+  
+  
+    <link href="/css/donate.css" rel="stylesheet">
+  
+  
+
+  
+  
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+  <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="/img/apple-touch-icon.png" />
+  
+
+  <link href="/css/owl.carousel.css" rel="stylesheet">
+  <link href="/css/owl.theme.css" rel="stylesheet">
+
+  <link rel="alternate" href="https://www.wangyuanyou.com/index.xml" type="application/rss+xml" title="王石宝的博客">
+
+  
+  <meta property="og:title" content="简单几步将log4j2产生的日志采集到阿里云" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="/blog/2018/10/29/%E7%AE%80%E5%8D%95%E5%87%A0%E6%AD%A5%E5%B0%86log4j2%E4%BA%A7%E7%94%9F%E7%9A%84%E6%97%A5%E5%BF%97%E9%87%87%E9%9B%86%E5%88%B0%E9%98%BF%E9%87%8C%E4%BA%91//" />
+  <meta property="og:image" content="img/logo.png" />
+
+</head>
+
+
+  <body>
+
+    <div id="all">
+
+        <header>
+
+          <div class="navbar-affixed-top" data-spy="affix" data-offset-top="200">
+
+    <div class="navbar navbar-default yamm" role="navigation" id="navbar">
+
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand home" href="https://www.wangyuanyou.com/" style="padding: 0; position: relative; top: 4px;">
+                    <img src="https://www.wangyuanyou.com/img/logo.png" style="width: auto; height: auto; max-width: 100%; max-height: 100%;" alt="简单几步将log4j2产生的日志采集到阿里云 logo" class="hidden-xs hidden-sm">
+                    <img src="https://www.wangyuanyou.com/img/logo-small.png" style="width: auto; height: auto; max-width: 100%; max-height: 100%; position: relative; top: -4px;" alt="简单几步将log4j2产生的日志采集到阿里云 logo" class="visible-xs visible-sm">
+                    <span class="sr-only">简单几步将log4j2产生的日志采集到阿里云 - 跳到主页</span>
+                </a>
+                <div class="navbar-buttons">
+                    <button type="button" class="navbar-toggle btn-template-main" data-toggle="collapse" data-target="#navigation">
+                      <span class="sr-only">切换导航</span>
+                        <i class="fa fa-align-justify"></i>
+                    </button>
+                </div>
+            </div>
+            
+
+            <div class="navbar-collapse collapse" id="navigation">
+                <ul class="nav navbar-nav navbar-right">
+                  
+                  <li class="dropdown">
+                    
+                    <a href="/">首页</a>
+                    
+                  </li>
+                  
+                  <li class="dropdown">
+                    
+                    <a href="/blog/">博客</a>
+                    
+                  </li>
+                  
+                  <li class="dropdown">
+                    
+                    <a href="/about/">关于</a>
+                    
+                  </li>
+                  
+                </ul>
+            </div>
+            
+
+            <div class="collapse clearfix" id="search">
+
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                        <span class="input-group-btn">
+
+                    <button type="submit" class="btn btn-template-main"><i class="fa fa-search"></i></button>
+
+                </span>
+                    </div>
+                </form>
+
+            </div>
+            
+
+        </div>
+    </div>
+    
+
+</div>
+
+
+
+
+        </header>
+
+        <div id="heading-breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>简单几步将log4j2产生的日志采集到阿里云</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+        <div id="content">
+            <div class="container">
+
+                <div class="row">
+
+                    
+
+                    <div class="col-md-9" id="blog-post">
+
+                        <p class="text-muted text-uppercase mb-small text-right">2018/10/29</p>
+
+                        <div id="post-content">
+                          
+
+<pre><code>    你有没有遇到这样的场景：线上程序出bug了，需要去日志里寻找线索。但是打开日志目录后，面对几十上百M的日志量十分头疼。按照时间线挨个打开日志，查询(Ctrl+F、Command+F)关键字。。。面对WARN、INFO、ERROR各种级别的日志焦头烂额。如果你每天都需要登录系统查看ERROR情况呢~如果你管理的是数个系统呢~是不是更加崩溃！
+    现在，让阿里云日志服务来拯救你吧，采集、查找、分析一条龙服务~
+    而且，对小型系统来说来说: 几！乎！免！费！
+</code></pre>
+
+<pre><code>    阿里云支持的日志采集方式众多，本文以log4j2产生的日志为例，简单几步就能将日志采集到阿里云进行查询和分析。
+</code></pre>
+
+<h4 id="创建阿里云logstore">创建阿里云Logstore</h4>
+
+<ol>
+<li>准备一个阿里云账号(<a href="https://www.aliyun.com/">https://www.aliyun.com/</a>) ， 登录 -&gt; <code>控制台</code> -&gt; <code>日志服务</code></li>
+<li><code>创建Project</code>(<em>所属地域</em>  选择离服务器最近的) -&gt; <code>创建Logstore</code>，关闭<code>数据接入向导</code>对话框。</li>
+<li>注：<code>数据接入向导</code>中显示只 <em>仅支持 Log4j1.x</em> ，应该是文档更新不及时的原因，实际支持log4j2。</li>
+</ol>
+
+<h4 id="创建accesskey">创建AccessKey</h4>
+
+<ol>
+<li>鼠标over到头像 -&gt; <code>accesskeys</code> ，建议使用子账户AccessKey，这样权限控制的比较细、比较安全。</li>
+<li>填写子账户名 -&gt; 选择 <code>AliyunLogFullAccess</code>（管理日志服务(Log)的权限）即可，无需给 AdministratorAccess（管理所有阿里云资源的权限）权限</li>
+</ol>
+
+<h4 id="log4j2-appender">Log4j2 appender</h4>
+
+<ol>
+<li>maven 工程中引入依赖</li>
+</ol>
+
+<pre><code>   &lt;dependency&gt;
+       &lt;groupId&gt;com.google.protobuf&lt;/groupId&gt;
+       &lt;artifactId&gt;protobuf-java&lt;/artifactId&gt;
+       &lt;version&gt;2.5.0&lt;/version&gt;
+   &lt;/dependency&gt;
+   &lt;dependency&gt;
+       &lt;groupId&gt;com.aliyun.openservices&lt;/groupId&gt;
+       &lt;artifactId&gt;aliyun-log-log4j2-appender&lt;/artifactId&gt;
+       &lt;version&gt;0.1.10&lt;/version&gt;
+   &lt;/dependency&gt;
+</code></pre>
+
+<ol>
+<li><p>修改配置文件</p></li>
+
+<li><pre><code>&lt;Appenders&gt;
+   &lt;Loghub name=&quot;Loghub&quot;
+           projectName=&quot;your project&quot;
+           logstore=&quot;your logstore&quot;
+           endpoint=&quot;your project endpoint&quot;
+           accessKeyId=&quot;your accesskey id&quot;
+           accessKey=&quot;your accesskey&quot;
+           packageTimeoutInMS=&quot;3000&quot;
+           logsCountPerPackage=&quot;4096&quot;
+           logsBytesPerPackage=&quot;3145728&quot;
+           memPoolSizeInByte=&quot;104857600&quot;
+           retryTimes=&quot;3&quot;
+           maxIOThreadSizeInPool=&quot;8&quot;
+           topic=&quot;your topic&quot;
+           source=&quot;your source&quot;
+           timeFormat=&quot;yyyy-MM-dd'T'HH:mmZ&quot;
+           timeZone=&quot;UTC&quot;
+           ignoreExceptions=&quot;true&quot;&gt;
+       &lt;PatternLayout pattern=&quot;%d %-5level [%thread] %logger{0}: %msg&quot;/&gt;
+   &lt;/Loghub&gt;
+&lt;/Appenders&gt;
+&lt;Loggers&gt;
+   &lt;Root level=&quot;warn&quot;&gt;
+       &lt;AppenderRef ref=&quot;Loghub&quot;/&gt;
+   &lt;/Root&gt;
+&lt;/Loggers&gt;
+</code></pre></li>
+</ol>
+
+<p>必填参数：</p>
+
+<ol>
+<li>projectName、logstore比较好理解，分别填入创建时的名称即可。</li>
+<li>endpoint要根据project所在地域选择，比如华北2（北京）的endpoint为<code>cn-beijing.log.aliyuncs.com</code>，其他地址详见：<a href="https://help.aliyun.com/document_detail/29008.html?spm=5176.10695662.1996646101.searchclickresult.407b560amiw5u5">https://help.aliyun.com/document_detail/29008.html?spm=5176.10695662.1996646101.searchclickresult.407b560amiw5u5</a></li>
+<li>accessKeyId和accessKey在创建完之后会下载到Excel文件中，分别对应填入即可。</li>
+<li>启动应用程序后，等待几分钟就被采集到阿里云了。</li>
+</ol>
+
+<h4 id="日志查询-分析">日志查询、分析</h4>
+
+<ol>
+<li>日志服务 -&gt; <code>Project列表</code> -&gt; 点击某个Project的<code>名称</code> -&gt; <code>Logstore列表</code> -&gt; 点击某个Logstore的<code>查询</code></li>
+<li><code>查询分析属性</code> -&gt; <code>设置</code> -&gt; 指定字段查询，比如添加<code>level</code>字段的查询，<code>类型</code>选择<code>text</code>，<code>分词符</code>为空即可。</li>
+<li>左侧<code>快速分析</code>Tab会出现<code>level</code>，一般情况下最关注ERROR类型的日志。</li>
+<li>此外在页面上很容易找到设置<code>内容列</code>和<code>时间</code>的位置</li>
+<li>如果经常需要查询某类场景，可以使用<code>另存为快速查询</code>功能将查询条件存储。比如将ERROR类型的查询存储起来，以便每天检查系统运行是否出错。在左侧的快速查询功能里点击即可。附图：<img src="/img/content/阿里云日志.png" alt="" /></li>
+</ol>
+
+<h4 id="费用">费用</h4>
+
+<ol>
+<li>计费规则分为主要计费项和次要计费项，主要计费项包括：读写流量、存储空间、索引流量，次要计费项包括：读写次数、活跃 Shard租用、外网读取流量。</li>
+<li>主要计费项每月有500M的免费流量（压缩后，文本文件的压缩比还是很可观的，能达到数十比一）。</li>
+<li>以我使用的小型系统为例，每月的主要计费项都免费，只收取少量次要计费项，大概每月15元，可以忽略不计了。在此感谢一下马云大佬~</li>
+<li>计费方式详见：<a href="https://help.aliyun.com/document_detail/48220.html?spm=5176.215333.1147926.6.702b4ae7M4VvBB">https://help.aliyun.com/document_detail/48220.html?spm=5176.215333.1147926.6.702b4ae7M4VvBB</a></li>
+</ol>
+
+                        </div>
+                        
+                        
+                            <hr style="border-top: 1px solid #acaaaa; margin-top: 28px;"/>
+                            <div class="panel sidebar-menu">
+                                <div class="panel-body">
+                                    <ul class="tag-cloud">
+                                        
+                                        <li><a href="https://www.wangyuanyou.com/tags/log4j2"><i class="fa fa-tags"></i> log4j2</a>
+                                        </li>
+                                        
+                                        <li><a href="https://www.wangyuanyou.com/tags/%e9%98%bf%e9%87%8c%e4%ba%91"><i class="fa fa-tags"></i> 阿里云</a>
+                                        </li>
+                                        
+                                        <li><a href="https://www.wangyuanyou.com/tags/%e6%97%a5%e5%bf%97"><i class="fa fa-tags"></i> 日志</a>
+                                        </li>
+                                        
+                                    </ul>
+                                </div>
+                            </div>
+                        
+                        
+                        
+
+    <div class="row" > 
+        <div id="donate" style="margin: 40px 0;">
+
+        </div>
+    </div>
+
+
+                        
+                        
+
+                    </div>
+                    
+
+                    
+
+                    
+
+                    <div class="col-md-3">
+
+                        
+
+                        
+
+<aside id="tocAside" class="toc affix-top" data-spy="affix" data-offset-top="120" data-offset-bottom="60">
+    <header>
+    <h2 style="text-align: center;">目录</h2>
+    </header>
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#创建阿里云logstore">创建阿里云Logstore</a></li>
+<li><a href="#创建accesskey">创建AccessKey</a></li>
+<li><a href="#log4j2-appender">Log4j2 appender</a></li>
+<li><a href="#日志查询-分析">日志查询、分析</a></li>
+<li><a href="#费用">费用</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+</aside>
+
+
+                        
+
+                    </div>
+                    
+
+                    
+
+                </div>
+                
+                
+            </div>
+            
+        </div>
+        
+
+        
+
+<div id="copyright">
+    <div class="container">
+        <div class="col-md-12">
+            
+            <p class="pull-left">版权声明：自由转载-非商用-非衍生-保持署名（创意共享3.0许可证）</p>
+            
+            <p class="pull-right">
+              模板来自 <a href="http://bootstrapious.com/free-templates">Bootstrapious</a>.
+              
+
+              Power by Hugo, Theme  <a href="https://github.com/willardwang/hugo-universal-blog-theme">universal-blog</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+    </div>
+    
+
+    
+<script src="//code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0/jquery.counterup.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-parallax/1.1.3/jquery-parallax.js"></script>
+<script src="https://www.wangyuanyou.com/js/front.js"></script>
+
+
+<script src="https://www.wangyuanyou.com/js/owl.carousel.min.js"></script>
+
+
+
+<script src="https://www.wangyuanyou.com/js/donate.js"></script>
+<script>
+    new vdonate({
+        title: '一毛钱不嫌少~\x3c\/br\x3e您的支持是我创作的动力，谢谢~', 
+        btnText: '赏', 
+        el: document.getElementById('donate'), 
+        wechatImage: 'https:\/\/www.wangyuanyou.com\/\/img\/wechat.jpg', 
+        alipayImage: 'https:\/\/www.wangyuanyou.com\/\/img\/alipay.jpg' 
+    });
+</script>
+
+
+
+  </body>
+</html>

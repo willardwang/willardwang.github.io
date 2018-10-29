@@ -203,6 +203,39 @@
 
                 
                 
+                <div class="col-md-3 col-sm-6">
+                    <div class="box-image-text blog">
+                        <div class="top">
+                            <div class="image" style="overflow:hidden">
+                                
+                                <img src="https://www.wangyuanyou.com/img/banners/placeholder.png" class="img-responsive" alt="" >
+                                
+                            </div>
+                            <div class="bg"></div>
+                            <div class="text">
+                                <p class="buttons">
+                                    <a href="https://www.wangyuanyou.com/blog/2018/10/29/%E7%AE%80%E5%8D%95%E5%87%A0%E6%AD%A5%E5%B0%86log4j2%E4%BA%A7%E7%94%9F%E7%9A%84%E6%97%A5%E5%BF%97%E9%87%87%E9%9B%86%E5%88%B0%E9%98%BF%E9%87%8C%E4%BA%91/" class="btn btn-template-transparent-primary"><i class="fa fa-link"></i> 阅读更多</a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="content">
+                            <h4><a href="https://www.wangyuanyou.com/blog/2018/10/29/%E7%AE%80%E5%8D%95%E5%87%A0%E6%AD%A5%E5%B0%86log4j2%E4%BA%A7%E7%94%9F%E7%9A%84%E6%97%A5%E5%BF%97%E9%87%87%E9%9B%86%E5%88%B0%E9%98%BF%E9%87%8C%E4%BA%91/">简单几步将log4j2产生的日志采集到阿里云</a></h4>
+                            <p class="author-category">
+                            
+                            在 2018/10/29
+                            </p>
+                            <p class="intro">你有没有遇到这样的场景：线上程序出bug了，需要去日志里寻找线索。但是打开日志目录后，面对几十上百M的日志量十分头疼。按照时间线挨个打开日志，查询(Ctrl+F、Command+F)关键字。。。面对WARN、INFO、ERROR各种级别的日志焦头烂额。如果你每天都需要登录系统查看ERROR情况呢~如果你管理的是数个系统呢~是不是更加崩溃！ 现在，让阿里云日志服务来拯救你吧，采集、查找、分析一条龙服务~ 而且，对小型系统来说来说: 几！乎！免！费！   阿里云支持的日志采集方式众多，本文以log4j2产生的日志为例，简单几步就能将日志采集到阿里云进行查询和分析。  创建阿里云Logstore  准备一个阿里云账号(https://www.aliyun.com/) ， 登录 -&gt; 控制台 -&gt; 日志服务 创建Project(所属地域 选择离服务器最近的) -&gt; 创建Logstore，关闭数据接入向导对话框。 注：数据接入向导中显示只 仅支持 Log4j1.x ，应该是文档更新不及时的原因，实际支持log4j2。  创建AccessKey  鼠标over到头像 -&gt; accesskeys ，建议使用子账户AccessKey，这样权限控制的比较细、比较安全。 填写子账户名 -&gt; 选择 AliyunLogFullAccess（管理日志服务(Log)的权限）即可，无需给 AdministratorAccess（管理所有阿里云资源的权限）权限  Log4j2 appender  maven 工程中引入依赖   &lt;dependency&gt; &lt;groupId&gt;com.google.protobuf&lt;/groupId&gt; &lt;artifactId&gt;protobuf-java&lt;/artifactId&gt; &lt;version&gt;2.5.0&lt;/version&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;com.aliyun.openservices&lt;/groupId&gt; &lt;artifactId&gt;aliyun-log-log4j2-appender&lt;/artifactId&gt; &lt;version&gt;0.1.10&lt;/version&gt; &lt;/dependency&gt;   修改配置文件
+ &lt;Appenders&gt; &lt;Loghub name=&quot;Loghub&quot; projectName=&quot;your project&quot; logstore=&quot;your logstore&quot; endpoint=&quot;your project endpoint&quot; accessKeyId=&quot;your accesskey id&quot; accessKey=&quot;your accesskey&quot; packageTimeoutInMS=&quot;3000&quot; logsCountPerPackage=&quot;4096&quot; logsBytesPerPackage=&quot;3145728&quot; memPoolSizeInByte=&quot;104857600&quot; retryTimes=&quot;3&quot; maxIOThreadSizeInPool=&quot;8&quot; topic=&quot;your topic&quot; source=&quot;your source&quot; timeFormat=&quot;yyyy-MM-dd'T'HH:mmZ&quot; timeZone=&quot;UTC&quot; ignoreExceptions=&quot;true&quot;&gt; &lt;PatternLayout pattern=&quot;%d %-5level [%thread] %logger{0}: %msg&quot;/&gt; &lt;/Loghub&gt; &lt;/Appenders&gt; &lt;Loggers&gt; &lt;Root level=&quot;warn&quot;&gt; &lt;AppenderRef ref=&quot;Loghub&quot;/&gt; &lt;/Root&gt; &lt;/Loggers&gt;   必填参数：</p>
+                            <p class="read-more">
+                              <a href="https://www.wangyuanyou.com/blog/2018/10/29/%E7%AE%80%E5%8D%95%E5%87%A0%E6%AD%A5%E5%B0%86log4j2%E4%BA%A7%E7%94%9F%E7%9A%84%E6%97%A5%E5%BF%97%E9%87%87%E9%9B%86%E5%88%B0%E9%98%BF%E9%87%8C%E4%BA%91/" class="btn btn-template-main">继续阅读</a>
+                            </p>
+                        </div>
+                    </div>
+                    
+
+                </div>
+                
 
             </div>
             
