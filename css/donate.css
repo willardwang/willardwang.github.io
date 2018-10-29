@@ -20,6 +20,7 @@
   width: 32px;
   height: 32px;
   background: url("../img/left-double-quotation-mark.png");
+  float: left;
 }
 #donate-modal-container .donate-quote-word {
   font-size: 20px;
@@ -34,7 +35,6 @@
   width: 32px;
   height: 32px;
   background: url("../img/right-double-quotation-mark.png");
-  float: right;
 }
 #donate-modal-container .donate-tab {
   margin-top: 14px;
@@ -84,7 +84,7 @@
 }
 #donate-modal-container .donate-modal-background .donate-modal {
   width: 300px;
-  height: 360px;
+  /* height: 360px; */
   position: absolute;
   box-sizing: border-box;
   font-weight: 300;

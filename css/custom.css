@@ -23,7 +23,7 @@ html,body{
 
 /* banner图层的透明度 */
 .home-carousel .dark-mask {
-  opacity: 0.8;
+  /* opacity: 0.8; */
 }
 
 /* footer版权区域的高度 */
@@ -51,9 +51,21 @@ html,body{
 }
 
 /* toc */
+#TableOfContents {
+  padding-left:4px;
+}
 #TableOfContents ul{
+  list-style-type: trad-chinese-informal;
+  padding-inline-start: 26px;
+}
+#TableOfContents ul ul{
   list-style-type: decimal;
-  padding-inline-start: 30px;
+}
+#TableOfContents ul ul ul{
+  list-style-type: lower-latin;
+}
+#TableOfContents li{
+  line-height: 26px;
 }
 .toc{
   position: fixed; 
@@ -62,10 +74,14 @@ html,body{
 }
 .toc.affix{
   top: 80px;
-  bottom: 63px;
+  bottom: 3px;
 }
 .toc.affix-top{
   top: 220px;
+  bottom: 3px;
+}
+.toc.affix-bottom{
+  bottom: 63px;
 }
 
 /* sidebar悬浮 */
@@ -73,13 +89,18 @@ html,body{
   position: fixed; 
   max-width: 262px;
   overflow-y: auto;
-  bottom: 63px;
 }
 .custom-sidebar.affix{
   top: 80px;
+  bottom: 3px;
 }
 .custom-sidebar.affix-top{
   top: 220px;
+  bottom: 3px;
+}
+.custom-sidebar.affix-bottom{
+  top: 80px;
+  bottom: 53px;
 }
 
 /* list row tag */
@@ -95,4 +116,27 @@ html,body{
 #heading-breadcrumbs h1{
   font-family: cursive;
   color: #558855;
+}
+
+/* categroy panel */
+.nav li{
+  line-height: 18px;
+}
+/* 博客列表页的图片圆角 */
+#blog-listing-medium .post .image{
+  border-radius: 5px;
+}
+/* 首页的图片圆角 */
+.box-image-text .image .img-responsive{
+  border-radius: 5px;
+}
+
+/* 前言使用markdown的代码块格式，控制下行高 */
+pre code{
+  line-height: 24px;
+}
+
+/* single页的li之间的高度 */
+#post-content ol, ul{
+  line-height: 30px;
 }
