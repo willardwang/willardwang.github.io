@@ -201,53 +201,50 @@
 
 <h4 id="log4j2-appender">Log4j2 appender</h4>
 
-<ol>
-<li>maven 工程中引入依赖</li>
-</ol>
+<ul>
+<li><p>maven 工程中引入依赖</p>
 
-<pre><code>   &lt;dependency&gt;
-       &lt;groupId&gt;com.google.protobuf&lt;/groupId&gt;
-       &lt;artifactId&gt;protobuf-java&lt;/artifactId&gt;
-       &lt;version&gt;2.5.0&lt;/version&gt;
-   &lt;/dependency&gt;
-   &lt;dependency&gt;
-       &lt;groupId&gt;com.aliyun.openservices&lt;/groupId&gt;
-       &lt;artifactId&gt;aliyun-log-log4j2-appender&lt;/artifactId&gt;
-       &lt;version&gt;0.1.10&lt;/version&gt;
-   &lt;/dependency&gt;
-</code></pre>
-
-<ol>
-<li><p>修改配置文件</p></li>
-
-<li><pre><code>&lt;Appenders&gt;
-   &lt;Loghub name=&quot;Loghub&quot;
-           projectName=&quot;your project&quot;
-           logstore=&quot;your logstore&quot;
-           endpoint=&quot;your project endpoint&quot;
-           accessKeyId=&quot;your accesskey id&quot;
-           accessKey=&quot;your accesskey&quot;
-           packageTimeoutInMS=&quot;3000&quot;
-           logsCountPerPackage=&quot;4096&quot;
-           logsBytesPerPackage=&quot;3145728&quot;
-           memPoolSizeInByte=&quot;104857600&quot;
-           retryTimes=&quot;3&quot;
-           maxIOThreadSizeInPool=&quot;8&quot;
-           topic=&quot;your topic&quot;
-           source=&quot;your source&quot;
-           timeFormat=&quot;yyyy-MM-dd'T'HH:mmZ&quot;
-           timeZone=&quot;UTC&quot;
-           ignoreExceptions=&quot;true&quot;&gt;
-       &lt;PatternLayout pattern=&quot;%d %-5level [%thread] %logger{0}: %msg&quot;/&gt;
-   &lt;/Loghub&gt;
-&lt;/Appenders&gt;
-&lt;Loggers&gt;
-   &lt;Root level=&quot;warn&quot;&gt;
-       &lt;AppenderRef ref=&quot;Loghub&quot;/&gt;
-   &lt;/Root&gt;
-&lt;/Loggers&gt;
+<pre><code> &lt;dependency&gt;
+     &lt;groupId&gt;com.google.protobuf&lt;/groupId&gt;
+     &lt;artifactId&gt;protobuf-java&lt;/artifactId&gt;
+     &lt;version&gt;2.5.0&lt;/version&gt;
+ &lt;/dependency&gt;
+ &lt;dependency&gt;
+     &lt;groupId&gt;com.aliyun.openservices&lt;/groupId&gt;
+     &lt;artifactId&gt;aliyun-log-log4j2-appender&lt;/artifactId&gt;
+     &lt;version&gt;0.1.10&lt;/version&gt;
+ &lt;/dependency&gt;
 </code></pre></li>
-</ol>
+
+<li><p>修改配置文件</p>
+
+<pre><code> &lt;Appenders&gt;
+       &lt;Loghub name=&quot;Loghub&quot;
+               projectName=&quot;your project&quot;
+               logstore=&quot;your logstore&quot;
+               endpoint=&quot;your project endpoint&quot;
+               accessKeyId=&quot;your accesskey id&quot;
+               accessKey=&quot;your accesskey&quot;
+               packageTimeoutInMS=&quot;3000&quot;
+               logsCountPerPackage=&quot;4096&quot;
+               logsBytesPerPackage=&quot;3145728&quot;
+               memPoolSizeInByte=&quot;104857600&quot;
+               retryTimes=&quot;3&quot;
+               maxIOThreadSizeInPool=&quot;8&quot;
+               topic=&quot;your topic&quot;
+               source=&quot;your source&quot;
+               timeFormat=&quot;yyyy-MM-dd'T'HH:mmZ&quot;
+               timeZone=&quot;UTC&quot;
+               ignoreExceptions=&quot;true&quot;&gt;
+           &lt;PatternLayout pattern=&quot;%d %-5level [%thread] %logger{0}: %msg&quot;/&gt;
+       &lt;/Loghub&gt;
+ &lt;/Appenders&gt;
+ &lt;Loggers&gt;
+       &lt;Root level=&quot;warn&quot;&gt;
+           &lt;AppenderRef ref=&quot;Loghub&quot;/&gt;
+       &lt;/Root&gt;
+ &lt;/Loggers&gt;
+</code></pre>
 
 <p>必填参数：</p>
 
@@ -256,17 +253,24 @@
 <li>endpoint要根据project所在地域选择，比如华北2（北京）的endpoint为<code>cn-beijing.log.aliyuncs.com</code>，其他地址详见：<a href="https://help.aliyun.com/document_detail/29008.html?spm=5176.10695662.1996646101.searchclickresult.407b560amiw5u5">https://help.aliyun.com/document_detail/29008.html?spm=5176.10695662.1996646101.searchclickresult.407b560amiw5u5</a></li>
 <li>accessKeyId和accessKey在创建完之后会下载到Excel文件中，分别对应填入即可。</li>
 <li>启动应用程序后，等待几分钟就被采集到阿里云了。</li>
-</ol>
+</ol></li>
+</ul>
 
 <h4 id="日志查询-分析">日志查询、分析</h4>
 
 <ol>
-<li>日志服务 -&gt; <code>Project列表</code> -&gt; 点击某个Project的<code>名称</code> -&gt; <code>Logstore列表</code> -&gt; 点击某个Logstore的<code>查询</code></li>
-<li><code>查询分析属性</code> -&gt; <code>设置</code> -&gt; 指定字段查询，比如添加<code>level</code>字段的查询，<code>类型</code>选择<code>text</code>，<code>分词符</code>为空即可。</li>
-<li>左侧<code>快速分析</code>Tab会出现<code>level</code>，一般情况下最关注ERROR类型的日志。</li>
-<li>此外在页面上很容易找到设置<code>内容列</code>和<code>时间</code>的位置</li>
-<li>如果经常需要查询某类场景，可以使用<code>另存为快速查询</code>功能将查询条件存储。比如将ERROR类型的查询存储起来，以便每天检查系统运行是否出错。在左侧的快速查询功能里点击即可。附图：<img src="/img/content/阿里云日志.png" alt="" /></li>
+<li><p>日志服务 -&gt; <code>Project列表</code> -&gt; 点击某个Project的<code>名称</code> -&gt; <code>Logstore列表</code> -&gt; 点击某个Logstore的<code>查询</code></p></li>
+
+<li><p><code>查询分析属性</code> -&gt; <code>设置</code> -&gt; 指定字段查询，比如添加<code>level</code>字段的查询，<code>类型</code>选择<code>text</code>，<code>分词符</code>为空即可。</p></li>
+
+<li><p>左侧<code>快速分析</code>Tab会出现<code>level</code>，一般情况下最关注ERROR类型的日志。</p></li>
+
+<li><p>此外在页面上很容易找到设置<code>内容列</code>和<code>时间</code>的位置</p></li>
+
+<li><p>如果经常需要查询某类场景，可以使用<code>另存为快速查询</code>功能将查询条件存储。比如将ERROR类型的查询存储起来，以便每天检查系统运行是否出错。在左侧的快速查询功能里点击即可。附图：</p></li>
 </ol>
+
+<p>{{ imgproc aliyun Resize &ldquo;300x&rdquo; }}</p>
 
 <h4 id="费用">费用</h4>
 

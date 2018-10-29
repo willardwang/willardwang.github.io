@@ -17,8 +17,7 @@
       <pubDate>Mon, 29 Oct 2018 17:44:18 +0800</pubDate>
       
       <guid>https://www.wangyuanyou.com/blog/2018/10/29/%E7%AE%80%E5%8D%95%E5%87%A0%E6%AD%A5%E5%B0%86log4j2%E4%BA%A7%E7%94%9F%E7%9A%84%E6%97%A5%E5%BF%97%E9%87%87%E9%9B%86%E5%88%B0%E9%98%BF%E9%87%8C%E4%BA%91/</guid>
-      <description>你有没有遇到这样的场景：线上程序出bug了，需要去日志里寻找线索。但是打开日志目录后，面对几十上百M的日志量十分头疼。按照时间线挨个打开日志，查询(Ctrl+F、Command+F)关键字。。。面对WARN、INFO、ERROR各种级别的日志焦头烂额。如果你每天都需要登录系统查看ERROR情况呢~如果你管理的是数个系统呢~是不是更加崩溃！ 现在，让阿里云日志服务来拯救你吧，采集、查找、分析一条龙服务~ 而且，对小型系统来说来说: 几！乎！免！费！   阿里云支持的日志采集方式众多，本文以log4j2产生的日志为例，简单几步就能将日志采集到阿里云进行查询和分析。  创建阿里云Logstore  准备一个阿里云账号(https://www.aliyun.com/) ， 登录 -&amp;gt; 控制台 -&amp;gt; 日志服务 创建Project(所属地域 选择离服务器最近的) -&amp;gt; 创建Logstore，关闭数据接入向导对话框。 注：数据接入向导中显示只 仅支持 Log4j1.x ，应该是文档更新不及时的原因，实际支持log4j2。  创建AccessKey  鼠标over到头像 -&amp;gt; accesskeys ，建议使用子账户AccessKey，这样权限控制的比较细、比较安全。 填写子账户名 -&amp;gt; 选择 AliyunLogFullAccess（管理日志服务(Log)的权限）即可，无需给 AdministratorAccess（管理所有阿里云资源的权限）权限  Log4j2 appender  maven 工程中引入依赖   &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;com.google.protobuf&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;protobuf-java&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;2.5.0&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;com.aliyun.openservices&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;aliyun-log-log4j2-appender&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;0.1.10&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt;   修改配置文件
- &amp;lt;Appenders&amp;gt; &amp;lt;Loghub name=&amp;quot;Loghub&amp;quot; projectName=&amp;quot;your project&amp;quot; logstore=&amp;quot;your logstore&amp;quot; endpoint=&amp;quot;your project endpoint&amp;quot; accessKeyId=&amp;quot;your accesskey id&amp;quot; accessKey=&amp;quot;your accesskey&amp;quot; packageTimeoutInMS=&amp;quot;3000&amp;quot; logsCountPerPackage=&amp;quot;4096&amp;quot; logsBytesPerPackage=&amp;quot;3145728&amp;quot; memPoolSizeInByte=&amp;quot;104857600&amp;quot; retryTimes=&amp;quot;3&amp;quot; maxIOThreadSizeInPool=&amp;quot;8&amp;quot; topic=&amp;quot;your topic&amp;quot; source=&amp;quot;your source&amp;quot; timeFormat=&amp;quot;yyyy-MM-dd&#39;T&#39;HH:mmZ&amp;quot; timeZone=&amp;quot;UTC&amp;quot; ignoreExceptions=&amp;quot;true&amp;quot;&amp;gt; &amp;lt;PatternLayout pattern=&amp;quot;%d %-5level [%thread] %logger{0}: %msg&amp;quot;/&amp;gt; &amp;lt;/Loghub&amp;gt; &amp;lt;/Appenders&amp;gt; &amp;lt;Loggers&amp;gt; &amp;lt;Root level=&amp;quot;warn&amp;quot;&amp;gt; &amp;lt;AppenderRef ref=&amp;quot;Loghub&amp;quot;/&amp;gt; &amp;lt;/Root&amp;gt; &amp;lt;/Loggers&amp;gt;   必填参数：</description>
+      <description>你有没有遇到这样的场景：线上程序出bug了，需要去日志里寻找线索。但是打开日志目录后，面对几十上百M的日志量十分头疼。按照时间线挨个打开日志，查询(Ctrl+F、Command+F)关键字。。。面对WARN、INFO、ERROR各种级别的日志焦头烂额。如果你每天都需要登录系统查看</description>
     </item>
     
     <item>
@@ -27,16 +26,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.wangyuanyou.com/about/</guid>
-      <description> 姓名：王石宝
-职业：30岁老码农
-邮箱：willardshibao@gmail.com
-技能：Java、Spring boot、Spring framework、JavaScript+CSS+HTML、Linux、MySql。。。
-工作现状：就职于北京炎黄盈动科技发展有限责任公司，一家专业的BPM（Business Process Management，业务流程管理）基础软件公司。前4年负责核心产品AWS的产品开发和应用开发，目前负责AWS的PaaS平台的研发，该平台实现了AWS产品的上云功能，支持阿里云、华为云、青云等。
- 
- 关于域名 www.wangyuanyou.com
-得名我儿（王远游），我的名字被抢注了，因此我抢注了我儿子的~😂😅😝
-吾儿内心独白：这坑儿老爸~😒🙃🙄
- </description>
+      <description>姓名：王石宝 职业：30岁老码农 邮箱：willardshibao@gmail.com 技能：Java、Spring boot、Spring framework、JavaScript+CSS+HTML、Linux、MySql。。。 工作现状：就职于北京炎黄盈动科技发展有限责任公司，一家专业的</description>
     </item>
     
   </channel>
