@@ -177,14 +177,17 @@
                           
 
 <pre><code>    你有没有遇到这样的场景：线上程序出bug了，需要去日志里寻找线索。但是打开日志目录后，面对几十上百M的日志量十分头疼。按照时间线挨个打开日志，查询(Ctrl+F、Command+F)关键字。。。面对WARN、INFO、ERROR各种级别的日志焦头烂额。如果你每天都需要登录系统查看ERROR情况呢~如果你管理的是数个系统呢~是不是更加崩溃！
+    
     现在，让阿里云日志服务来拯救你吧，采集、查找、分析一条龙服务~
+    
     而且，对小型系统来说来说: 几！乎！免！费！
+    
+    阿里云支持的日志采集方式众多，本文以log4j2产生的日志为例，简单几步就能将日志采集到阿里云进行查询和分析。
 </code></pre>
 
-<pre><code>    阿里云支持的日志采集方式众多，本文以log4j2产生的日志为例，简单几步就能将日志采集到阿里云进行查询和分析。
-</code></pre>
+<p></br></p>
 
-<h4 id="创建阿里云logstore">创建阿里云Logstore</h4>
+<h1 id="创建阿里云logstore">创建阿里云Logstore</h1>
 
 <ol>
 <li>准备一个阿里云账号(<a href="https://www.aliyun.com/">https://www.aliyun.com/</a>) ， 登录 -&gt; <code>控制台</code> -&gt; <code>日志服务</code></li>
@@ -192,14 +195,18 @@
 <li>注：<code>数据接入向导</code>中显示只 <em>仅支持 Log4j1.x</em> ，应该是文档更新不及时的原因，实际支持log4j2。</li>
 </ol>
 
-<h4 id="创建accesskey">创建AccessKey</h4>
+<p></br></p>
+
+<h1 id="创建accesskey">创建AccessKey</h1>
 
 <ol>
 <li>鼠标over到头像 -&gt; <code>accesskeys</code> ，建议使用子账户AccessKey，这样权限控制的比较细、比较安全。</li>
 <li>填写子账户名 -&gt; 选择 <code>AliyunLogFullAccess</code>（管理日志服务(Log)的权限）即可，无需给 AdministratorAccess（管理所有阿里云资源的权限）权限</li>
 </ol>
 
-<h4 id="log4j2-appender">Log4j2 appender</h4>
+<p></br></p>
+
+<h1 id="log4j2-appender">Log4j2 appender</h1>
 
 <ul>
 <li><p>maven 工程中引入依赖</p>
@@ -256,7 +263,9 @@
 </ol></li>
 </ul>
 
-<h4 id="日志查询-分析">日志查询、分析</h4>
+<p></br></p>
+
+<h1 id="日志查询-分析">日志查询、分析</h1>
 
 <ol>
 <li><p>日志服务 -&gt; <code>Project列表</code> -&gt; 点击某个Project的<code>名称</code> -&gt; <code>Logstore列表</code> -&gt; 点击某个Logstore的<code>查询</code></p></li>
@@ -270,9 +279,26 @@
 <li><p>如果经常需要查询某类场景，可以使用<code>另存为快速查询</code>功能将查询条件存储。比如将ERROR类型的查询存储起来，以便每天检查系统运行是否出错。在左侧的快速查询功能里点击即可。附图：</p></li>
 </ol>
 
-<p>{{ imgproc aliyun Resize &ldquo;300x&rdquo; }}</p>
 
-<h4 id="费用">费用</h4>
+
+
+
+
+	
+
+
+
+<figure style="padding: 0.25rem; margin: 2rem 0; background-color: #cccc">
+	<img style="max-width: 100%; height: auto;" src="/blog/2018/10/29/%E7%AE%80%E5%8D%95%E5%87%A0%E6%AD%A5%E5%B0%86log4j2%E4%BA%A7%E7%94%9F%E7%9A%84%E6%97%A5%E5%BF%97%E9%87%87%E9%9B%86%E5%88%B0%E9%98%BF%E9%87%8C%E4%BA%91/aliyun-log_hubed02b5eb4c74d644d0012ff20e4b17a_169713_847x0_resize_box_2.png" width="847" height="372">
+	<figcaption>
+	
+	
+	</figcaption>
+</figure>   
+
+<p></br></p>
+
+<h1 id="费用">费用</h1>
 
 <ol>
 <li>计费规则分为主要计费项和次要计费项，主要计费项包括：读写流量、存储空间、索引流量，次要计费项包括：读写次数、活跃 Shard租用、外网读取流量。</li>
@@ -280,6 +306,15 @@
 <li>以我使用的小型系统为例，每月的主要计费项都免费，只收取少量次要计费项，大概每月15元，可以忽略不计了。在此感谢一下马云大佬~</li>
 <li>计费方式详见：<a href="https://help.aliyun.com/document_detail/48220.html?spm=5176.215333.1147926.6.702b4ae7M4VvBB">https://help.aliyun.com/document_detail/48220.html?spm=5176.215333.1147926.6.702b4ae7M4VvBB</a></li>
 </ol>
+
+<p></br></br></p>
+
+<p><center></p>
+
+<pre><code>结语：阿里云日志功能非常强大，支持众多采集方式、查询方式、分析方式，更多功能等你来挖掘使用。
+</code></pre>
+
+<p></center></p>
 
                         </div>
                         
@@ -334,25 +369,16 @@
     </header>
     <nav id="TableOfContents">
 <ul>
-<li>
-<ul>
-<li>
-<ul>
-<li>
-<ul>
 <li><a href="#创建阿里云logstore">创建阿里云Logstore</a></li>
 <li><a href="#创建accesskey">创建AccessKey</a></li>
 <li><a href="#log4j2-appender">Log4j2 appender</a></li>
 <li><a href="#日志查询-分析">日志查询、分析</a></li>
 <li><a href="#费用">费用</a></li>
-</ul></li>
-</ul></li>
-</ul></li>
 </ul>
 </nav>
 </aside>
 
-
+                        
                         
 
                     </div>

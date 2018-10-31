@@ -55,14 +55,8 @@ html,body{
   padding-left:4px;
 }
 #TableOfContents ul{
-  list-style-type: trad-chinese-informal;
-  padding-inline-start: 26px;
-}
-#TableOfContents ul ul{
   list-style-type: decimal;
-}
-#TableOfContents ul ul ul{
-  list-style-type: lower-latin;
+  padding-inline-start: 26px;
 }
 #TableOfContents li{
   line-height: 26px;
@@ -137,6 +131,43 @@ pre code{
 }
 
 /* single页的li之间的高度 */
-#post-content ol, ul{
+#post-content ol {
   line-height: 30px;
+}
+#post-content ul{
+  line-height: 30px;
+}
+
+/* 由于hugo的toc不支持empty level，固定从h1开始的，所以被迫使用h1，用css控制字体大小 */
+/* 写文章是使用h1、h2即可 */
+h1{
+  /* font-size: 36px; */
+  font-size: 24px;
+}
+h2{
+  /* font-size: 30px; */
+  font-size: 18px;
+}
+h3{
+  font-size: 24px;
+}
+h4{
+  font-size: 18px;
+}
+h5{
+  font-size: 14px;
+}
+h6{
+  font-size: 10px;
+}
+
+/* 字体 */
+body{
+  font-size: 15px;
+}
+pre{
+  font-size: 14px;
+}
+.intro{
+  font-size: 14px;
 }
