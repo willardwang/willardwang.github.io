@@ -1,0 +1,173 @@
+/* your styles go here */
+
+/* footer固定 */
+html,body{
+  height: 100%;
+}
+#all{
+  height: 100%;
+  min-height: 100%;
+}
+#content{
+  min-height: calc(100% - 268px);
+}
+
+.box-image-text .image {
+  min-height: 200px;
+  max-height: 200px;
+}
+
+.box-simple {
+  min-height: 230px;
+}
+
+/* banner图层的透明度 */
+.home-carousel .dark-mask {
+  /* opacity: 0.8; */
+}
+
+/* footer版权区域的高度 */
+#copyright {
+  padding: 10px 0;
+}
+
+/* banner和近期博客模块之间的高度 */
+.bar {
+  padding: 0;
+}
+.heading {
+  margin-bottom: 0; 
+}
+
+/* list.html和single.html头部的贯穿图片 */
+#heading-breadcrumbs {
+  background: url(../img/texture-green.png) center center repeat;
+}
+
+/* 页内锚点顶部不被nav隐藏 */
+#post-content h1, #post-content h2, #post-content h3, #post-content h4, #post-content h5 {
+  padding-top: 77px;
+  margin-top: -77px;
+}
+
+/* toc */
+#TableOfContents {
+  padding-left:4px;
+}
+#TableOfContents ul{
+  list-style-type: decimal;
+  padding-inline-start: 26px;
+}
+#TableOfContents li{
+  line-height: 26px;
+}
+.toc{
+  position: fixed; 
+  max-width: 262px;
+  overflow-y: auto;
+}
+.toc.affix{
+  top: 80px;
+  bottom: 3px;
+}
+.toc.affix-top{
+  top: 220px;
+  bottom: 3px;
+}
+.toc.affix-bottom{
+  bottom: 63px;
+}
+
+/* sidebar悬浮 */
+.custom-sidebar{
+  position: fixed; 
+  max-width: 262px;
+  overflow-y: auto;
+}
+.custom-sidebar.affix{
+  top: 80px;
+  bottom: 3px;
+}
+.custom-sidebar.affix-top{
+  top: 220px;
+  bottom: 3px;
+}
+.custom-sidebar.affix-bottom{
+  top: 80px;
+  bottom: 53px;
+}
+
+/* list row tag */
+.panel-body.left{
+  width: calc(100% - 84px);
+  float: left;
+}
+.read-more.right{
+  float: right;
+}
+
+/* breadcrumbs字体 */
+#heading-breadcrumbs h1{
+  font-family: cursive;
+  color: #558855;
+}
+
+/* categroy panel */
+.nav li{
+  line-height: 18px;
+}
+/* 博客列表页的图片圆角 */
+#blog-listing-medium .post .image{
+  border-radius: 5px;
+}
+/* 首页的图片圆角 */
+.box-image-text .image .img-responsive{
+  border-radius: 5px;
+}
+
+/* 前言使用markdown的代码块格式，控制下行高 */
+pre code{
+  line-height: 24px;
+}
+
+/* single页的li之间的高度 */
+#post-content ol {
+  line-height: 30px;
+}
+#post-content ul{
+  line-height: 30px;
+}
+
+/* 由于hugo的toc不支持empty level，固定从h1开始的，所以被迫使用h1，用css控制字体大小 */
+/* 写文章是使用h1、h2即可 */
+h1{
+  /* font-size: 36px; */
+  font-size: 24px;
+}
+h2{
+  /* font-size: 30px; */
+  font-size: 18px;
+}
+h3{
+  font-size: 24px;
+}
+h4{
+  font-size: 18px;
+}
+h5{
+  font-size: 14px;
+}
+h6{
+  font-size: 10px;
+}
+
+/* 字体 */
+body{
+  font-size: 15px;
+}
+pre{
+  font-size: 14px;
+}
+.intro{
+  font-size: 14px;
+}
