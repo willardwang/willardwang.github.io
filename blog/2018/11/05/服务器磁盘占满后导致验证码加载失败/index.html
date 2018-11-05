@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>服务器磁盘使用率100%后导致验证码加载失败</title>
+  <meta name="author" content="" />
+
+  
+  <meta name="keywords" content="王石宝, blog">	
+  
+
+  
+  <meta name="description" content="王石宝的博客">	
+  
+
+  <meta name="generator" content="Hugo 0.49.2" />
+
+  
+  
+  <link href="/css/fonts.googleapis.css" rel='stylesheet' type='text/css'>
+
+  
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  
+  <link href="/css/animate.css" rel="stylesheet">
+
+  
+  
+    <link href="/css/style.blue.css" rel="stylesheet" id="theme-stylesheet">
+  
+
+
+  
+  <link href="/css/custom.css" rel="stylesheet">
+
+  
+  
+  
+    <link href="/css/donate.css" rel="stylesheet">
+  
+  
+
+  
+  
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+  <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="/img/apple-touch-icon.png" />
+  
+
+  <link href="/css/owl.carousel.css" rel="stylesheet">
+  <link href="/css/owl.theme.css" rel="stylesheet">
+
+  <link rel="alternate" href="https://www.wangyuanyou.com/index.xml" type="application/rss+xml" title="王石宝的博客">
+
+  
+  <meta property="og:title" content="服务器磁盘使用率100%后导致验证码加载失败" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="/blog/2018/11/05/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A3%81%E7%9B%98%E5%8D%A0%E6%BB%A1%E5%90%8E%E5%AF%BC%E8%87%B4%E9%AA%8C%E8%AF%81%E7%A0%81%E5%8A%A0%E8%BD%BD%E5%A4%B1%E8%B4%A5//" />
+  <meta property="og:image" content="img/logo.png" />
+
+</head>
+
+
+  <body>
+
+    <div id="all">
+
+        <header>
+
+          <div class="navbar-affixed-top" data-spy="affix" data-offset-top="200">
+
+    <div class="navbar navbar-default yamm" role="navigation" id="navbar">
+
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand home" href="https://www.wangyuanyou.com/" style="padding: 0; position: relative; top: 4px;">
+                    <img src="https://www.wangyuanyou.com/img/logo.png" style="width: auto; height: auto; max-width: 100%; max-height: 100%;" alt="服务器磁盘使用率100%后导致验证码加载失败 logo" class="hidden-xs hidden-sm">
+                    <img src="https://www.wangyuanyou.com/img/logo-small.png" style="width: auto; height: auto; max-width: 100%; max-height: 100%; position: relative; top: -4px;" alt="服务器磁盘使用率100%后导致验证码加载失败 logo" class="visible-xs visible-sm">
+                    <span class="sr-only">服务器磁盘使用率100%后导致验证码加载失败 - 跳到主页</span>
+                </a>
+                <div class="navbar-buttons">
+                    <button type="button" class="navbar-toggle btn-template-main" data-toggle="collapse" data-target="#navigation">
+                      <span class="sr-only">切换导航</span>
+                        <i class="fa fa-align-justify"></i>
+                    </button>
+                </div>
+            </div>
+            
+
+            <div class="navbar-collapse collapse" id="navigation">
+                <ul class="nav navbar-nav navbar-right">
+                  
+                  <li class="dropdown">
+                    
+                    <a href="/">首页</a>
+                    
+                  </li>
+                  
+                  <li class="dropdown">
+                    
+                    <a href="/blog/">博客</a>
+                    
+                  </li>
+                  
+                  <li class="dropdown">
+                    
+                    <a href="/about/">关于</a>
+                    
+                  </li>
+                  
+                </ul>
+            </div>
+            
+
+            <div class="collapse clearfix" id="search">
+
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                        <span class="input-group-btn">
+
+                    <button type="submit" class="btn btn-template-main"><i class="fa fa-search"></i></button>
+
+                </span>
+                    </div>
+                </form>
+
+            </div>
+            
+
+        </div>
+    </div>
+    
+
+</div>
+
+
+
+
+        </header>
+
+        <div id="heading-breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>服务器磁盘使用率100%后导致验证码加载失败</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+        <div id="content">
+            <div class="container">
+
+                <div class="row">
+
+                    
+
+                    <div class="col-md-9" id="blog-post">
+
+                        <p class="text-muted text-uppercase mb-small text-right">2018/11/05</p>
+
+                        <div id="post-content">
+                          
+
+<pre><code>    公司某个平台登录页的验证码加载失败，导致无法登录。经过排查，原因为磁盘被Tomcat产生的日志占满导致。虽出身程序员，但身兼平台的开发和运维，需要掌握的除了开发能力之外，还有经常被忽略的运维技能，运维的过程也会给开发带来思考。
+</code></pre>
+
+<p><br></p>
+
+<h1 id="发现问题">发现问题</h1>
+
+<p><br></p>
+
+<h2 id="环境">环境</h2>
+
+<pre><code>操作系统：CentOS release 6.5 (Final)
+Tomcat：8.5.32
+云提供商：青云
+</code></pre>
+
+<p><br></p>
+
+<h2 id="直接原因">直接原因</h2>
+
+<p>通过外部日志系统查看错误日志：</p>
+
+<pre><code>thread: http-nio-8044-exec-2 throwable: java.io.IOException: No space left on device
+    at java.io.RandomAccessFile.writeBytes(Native Method)
+    at java.io.RandomAccessFile.write(RandomAccessFile.java:525)
+    at javax.imageio.stream.FileCacheImageOutputStream.write(FileCacheImageOutputStream.java:141)
+    at com.sun.imageio.plugins.jpeg.JPEGImageWriter.writeOutputData(JPEGImageWriter.java:1869)
+    at com.sun.imageio.plugins.jpeg.JPEGImageWriter.writeImage(Native Method)
+    at com.sun.imageio.plugins.jpeg.JPEGImageWriter.writeOnThread(JPEGImageWriter.java:1067)
+    at com.sun.imageio.plugins.jpeg.JPEGImageWriter.write(JPEGImageWriter.java:363)
+    at javax.imageio.ImageWriter.write(ImageWriter.java:615)
+    at javax.imageio.ImageIO.doWrite(ImageIO.java:1612)
+    at javax.imageio.ImageIO.write(ImageIO.java:1578)
+    at com.awspaas.web.login.web.controller.CodeController.codeGenerator(CodeController.java:90)
+</code></pre>
+
+<p><code>可见是由于磁盘使用100%导致了写图片验证码时出现Java IO异常</code>，此时外部日志系统的优点之一展现出来：由于磁盘使用率为100%，导致无法登录服务器查看异常日志，但是可以通过外部日志系统查看。搭建外部日志系统请参见：<a href="/blog/2018/10/29/简单几步将log4j2产生的日志采集到阿里云/">简单几步将log4j2产生的日志采集到阿里云</a></p>
+
+<p><br></p>
+
+<h1 id="解决问题">解决问题</h1>
+
+<p><br></p>
+
+<h2 id="恢复tomcat">恢复Tomcat</h2>
+
+<p>首先恢复Tomcat将影响降低，因为租用的青云服务器，所以登录到青云控制台执行以下操作：</p>
+
+<ol>
+<li>关机（开机状态下无法扩容硬盘）</li>
+<li>扩容硬盘，然后开机</li>
+<li>发现无法通过原有秘钥登录系统，报错：<code>Permission denied (publickey).</code>，原因未知。</li>
+<li>在青云控制台重置服务器密码</li>
+<li>使用新密码登录</li>
+<li>启动tomcat</li>
+</ol>
+
+<p><br></p>
+
+<h2 id="恢复秘钥登录">恢复秘钥登录</h2>
+
+<ol>
+<li>查看公钥文件/root/.ssh/authorized_keys，文件确实为空，印证了为什么无法使用秘钥登录。</li>
+<li>修改/etc/ssh/sshd_config文件，将PasswordAuthentication设为no，将RSAAuthentication、PubkeyAuthentication和PermitRootLogin设为yes</li>
+<li>重启ssh服务：service sshd restart</li>
+<li>在青云上重新向主机绑定秘钥，查看/root/.ssh/authorized_keys文件，发现确实有了一个公钥。(如果知道原公钥内容也可以直接追加至此文件)</li>
+<li>尝试用新秘钥登录，成功。</li>
+</ol>
+
+<p><br></p>
+
+<h2 id="查找占用原因">查找占用原因</h2>
+
+<ol>
+<li><p>查看磁盘使用率：</p>
+
+<pre><code>[root@i-01b5gxms logs]# df -h
+Filesystem            Size  Used Avail Use% Mounted on
+/dev/sda1              30G   20G  8.4G  71% /
+tmpfs                 1.9G     0  1.9G   0% /dev/shm
+</code></pre>
+
+<p>原有大小20G，扩容到30G，使用率为：71%，符合预期。</p></li>
+
+<li><p>在根目录下执行:du -sh *，查看过大的目录，然后进入过大目录，继续执行该命令。最终，发现tomcat日志过大。</p>
+
+<pre><code>[root@i-01b5gxms apache-tomcat-8.5.32]# du -sh *
+848K    bin
+244K    conf
+7.6M    lib
+56K LICENSE
+18G logs
+4.0K    NOTICE
+8.0K    RELEASE-NOTES
+16K RUNNING.txt
+4.0K    temp
+209M    webapps
+220K    work
+</code></pre></li>
+
+<li><p>按照大小排序，发现catalina.out过大导致，18G！</p>
+
+<pre><code>[root@i-01b5gxms logs]# ll -Sh
+total 18G
+-rw-r----- 1 root root  18G Nov  5 11:11 catalina.out
+-rw-r----- 1 root root 716K Sep 29 18:40 catalina.2018-09-29.log
+-rw-r----- 1 root root 373K Aug  1 11:29 catalina.2018-08-01.log
+-rw-r----- 1 root root 201K Aug  2 15:34 catalina.2018-08-02.log
+-rw-r----- 1 root root  74K Aug  1 11:29 error-debug.2018-08-01.log
+-rw-r----- 1 root root  62K Jul 30 21:33 catalina.2018-07-30.log
+-rw-r----- 1 root root  55K Jul 30 21:07 error-debug.2018-07-30.log
+</code></pre></li>
+
+<li><p>删除catalina.out，执行df -h仍然为71%，磁盘使用率并未如期下降。原因是日志文件被删除之前被Tomcat占用，删除后依然占用空间，重启tomcat后再次查看，磁盘使用率已经降下来：</p>
+
+<pre><code>[root@i-01b5gxms PaaS]# df -h
+Filesystem            Size  Used Avail Use% Mounted on
+/dev/sda1              30G  2.1G   26G   8% /
+tmpfs                 1.9G     0  1.9G   0% /dev/shm
+</code></pre></li>
+</ol>
+
+<p><br></p>
+
+<h1 id="补救措施">补救措施</h1>
+
+<p><br></p>
+
+<h2 id="磁盘监控">磁盘监控</h2>
+
+<pre><code>   在青云控制台创建资源使用率告警，当资源达到设置的阈值时会发送短信、邮件、微信通知。方便及时处理潜在危险，好过危险出现以后再解决。
+</code></pre>
+
+
+
+
+
+
+	
+
+
+
+<figure style="padding: 0.25rem; margin: 2rem 0; background-color: #cccc">
+	<img style="max-width: 100%; height: auto;" src="/blog/2018/11/05/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A3%81%E7%9B%98%E5%8D%A0%E6%BB%A1%E5%90%8E%E5%AF%BC%E8%87%B4%E9%AA%8C%E8%AF%81%E7%A0%81%E5%8A%A0%E8%BD%BD%E5%A4%B1%E8%B4%A5/%E9%9D%92%E4%BA%91%E8%B5%84%E6%BA%90%E7%9B%91%E6%8E%A7%E5%91%8A%E8%AD%A6_hu8ecff97fd9f29dad0c08b1f71537f0fc_52130_841x0_resize_box_2.png" width="841" height="291">
+	<figcaption>
+	
+	
+	</figcaption>
+</figure>   
+
+<p><br></p>
+
+<h2 id="开机启动tomcat">开机启动Tomcat</h2>
+
+<p>将Tomcat设为开机启动，这样当无法登录时Tomcat也能提供服务，为解决登录问题赢取时间。设置时请注意Linux发新版本，我的是CentOS release 6.5 (Final)
+​</p>
+
+<pre><code>vi /etc/rc.d/rc.local
+</code></pre>
+
+<pre><code>nohup sh /data/userconsole/apache-tomcat-8.5.31/bin/startup.sh &gt; /dev/null 2&gt;&amp;1 &amp;
+</code></pre>
+
+                        </div>
+                        
+                        
+                        
+                        
+
+    <div class="row" > 
+        <div id="donate" style="margin: 40px 0;">
+
+        </div>
+    </div>
+
+
+                        
+                        
+
+                    </div>
+                    
+
+                    
+
+                    
+
+                    <div class="col-md-3">
+
+                        
+
+                        
+
+<aside id="tocAside" class="toc affix-top" data-spy="affix" data-offset-top="120" data-offset-bottom="60">
+    <header>
+    <h2 style="text-align: center;">目录</h2>
+    </header>
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#发现问题">发现问题</a>
+<ul>
+<li><a href="#环境">环境</a></li>
+<li><a href="#直接原因">直接原因</a></li>
+</ul></li>
+<li><a href="#解决问题">解决问题</a>
+<ul>
+<li><a href="#恢复tomcat">恢复Tomcat</a></li>
+<li><a href="#恢复秘钥登录">恢复秘钥登录</a></li>
+<li><a href="#查找占用原因">查找占用原因</a></li>
+</ul></li>
+<li><a href="#补救措施">补救措施</a>
+<ul>
+<li><a href="#磁盘监控">磁盘监控</a></li>
+<li><a href="#开机启动tomcat">开机启动Tomcat</a></li>
+</ul></li>
+</ul>
+</nav>
+</aside>
+
+                        
+                        
+
+                    </div>
+                    
+
+                    
+
+                </div>
+                
+                
+            </div>
+            
+        </div>
+        
+
+        
+
+<div id="copyright">
+    <div class="container">
+        <div class="col-md-12">
+            
+            <p class="pull-left">版权声明：自由转载-非商用-非衍生-保持署名（创意共享3.0许可证）</p>
+            
+            <p class="pull-right">
+              模板来自 <a href="http://bootstrapious.com/free-templates">Bootstrapious</a>.
+              
+
+              Power by Hugo, Theme  <a href="https://github.com/willardwang/hugo-universal-blog-theme">universal-blog</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+    </div>
+    
+
+    
+<script src="//code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0/jquery.counterup.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-parallax/1.1.3/jquery-parallax.js"></script>
+<script src="https://www.wangyuanyou.com/js/front.js"></script>
+
+
+<script src="https://www.wangyuanyou.com/js/owl.carousel.min.js"></script>
+
+
+
+<script src="https://www.wangyuanyou.com/js/donate.js"></script>
+<script>
+    new vdonate({
+        title: '一毛钱不嫌少~\x3c\/br\x3e您的支持是我创作的动力，谢谢~', 
+        btnText: '赏', 
+        el: document.getElementById('donate'), 
+        wechatImage: 'https:\/\/www.wangyuanyou.com\/\/img\/wechat.jpg', 
+        alipayImage: 'https:\/\/www.wangyuanyou.com\/\/img\/alipay.jpg' 
+    });
+</script>
+
+
+
+  </body>
+</html>

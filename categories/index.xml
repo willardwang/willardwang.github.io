@@ -10,5 +10,14 @@
 	<atom:link href="https://www.wangyuanyou.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title>运维</title>
+      <link>https://www.wangyuanyou.com/categories/%E8%BF%90%E7%BB%B4/</link>
+      <pubDate>Mon, 05 Nov 2018 11:33:28 +0800</pubDate>
+      
+      <guid>https://www.wangyuanyou.com/categories/%E8%BF%90%E7%BB%B4/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
