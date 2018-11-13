@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>青云主机迁移到华为云</title>
+  <meta name="author" content="" />
+
+  
+  <meta name="keywords" content="王石宝, blog">	
+  
+
+  
+  <meta name="description" content="王石宝的博客">	
+  
+
+  <meta name="generator" content="Hugo 0.49.2" />
+
+  
+  
+  <link href="/css/fonts.googleapis.css" rel='stylesheet' type='text/css'>
+
+  
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  
+  <link href="/css/animate.css" rel="stylesheet">
+
+  
+  
+    <link href="/css/style.blue.css" rel="stylesheet" id="theme-stylesheet">
+  
+
+
+  
+  <link href="/css/custom.css" rel="stylesheet">
+
+  
+  
+  
+    <link href="/css/donate.css" rel="stylesheet">
+  
+  
+
+  
+  
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+  <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="/img/apple-touch-icon.png" />
+  
+
+  <link href="/css/owl.carousel.css" rel="stylesheet">
+  <link href="/css/owl.theme.css" rel="stylesheet">
+
+  <link rel="alternate" href="https://www.wangyuanyou.com/index.xml" type="application/rss+xml" title="王石宝的博客">
+
+  
+  <meta property="og:title" content="青云主机迁移到华为云" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="/blog/2018/11/13/%E9%9D%92%E4%BA%91%E4%B8%BB%E6%9C%BA%E8%BF%81%E7%A7%BB%E5%88%B0%E5%8D%8E%E4%B8%BA%E4%BA%91//" />
+  <meta property="og:image" content="img/logo.png" />
+
+</head>
+
+
+  <body>
+
+    <div id="all">
+
+        <header>
+
+          <div class="navbar-affixed-top" data-spy="affix" data-offset-top="200">
+
+    <div class="navbar navbar-default yamm" role="navigation" id="navbar">
+
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand home" href="https://www.wangyuanyou.com/" style="padding: 0; position: relative; top: 4px;">
+                    <img src="https://www.wangyuanyou.com/img/logo.png" style="width: auto; height: auto; max-width: 100%; max-height: 100%;" alt="青云主机迁移到华为云 logo" class="hidden-xs hidden-sm">
+                    <img src="https://www.wangyuanyou.com/img/logo-small.png" style="width: auto; height: auto; max-width: 100%; max-height: 100%; position: relative; top: -4px;" alt="青云主机迁移到华为云 logo" class="visible-xs visible-sm">
+                    <span class="sr-only">青云主机迁移到华为云 - 跳到主页</span>
+                </a>
+                <div class="navbar-buttons">
+                    <button type="button" class="navbar-toggle btn-template-main" data-toggle="collapse" data-target="#navigation">
+                      <span class="sr-only">切换导航</span>
+                        <i class="fa fa-align-justify"></i>
+                    </button>
+                </div>
+            </div>
+            
+
+            <div class="navbar-collapse collapse" id="navigation">
+                <ul class="nav navbar-nav navbar-right">
+                  
+                  <li class="dropdown">
+                    
+                    <a href="/">首页</a>
+                    
+                  </li>
+                  
+                  <li class="dropdown">
+                    
+                    <a href="/blog/">博客</a>
+                    
+                  </li>
+                  
+                  <li class="dropdown">
+                    
+                    <a href="/about/">关于</a>
+                    
+                  </li>
+                  
+                </ul>
+            </div>
+            
+
+            <div class="collapse clearfix" id="search">
+
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                        <span class="input-group-btn">
+
+                    <button type="submit" class="btn btn-template-main"><i class="fa fa-search"></i></button>
+
+                </span>
+                    </div>
+                </form>
+
+            </div>
+            
+
+        </div>
+    </div>
+    
+
+</div>
+
+
+
+
+        </header>
+
+        <div id="heading-breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>青云主机迁移到华为云</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+        <div id="content">
+            <div class="container">
+
+                <div class="row">
+
+                    
+
+                    <div class="col-md-9" id="blog-post">
+
+                        <p class="text-muted text-uppercase mb-small text-right">2018/11/13</p>
+
+                        <div id="post-content">
+                          
+
+<blockquote>
+<p>客户的业务系统原来部署在青云上，根据客户公司战略要求需要将其迁移到华为云上。工作主要划分为两类：海量数据的迁移以及服务器环境、软件环境的复制，在软件环境中尤其以MySQL数据库的数据恢复最需慎重。本文为前一类：海量数据的迁移。服务器环境、软件环境的复制请见文章：</p>
+</blockquote>
+
+<p><br></p>
+
+<h1 id="前言">前言</h1>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;云上大数据量的迁移有两个特点：一是数据远在云端，无法用硬盘拷贝。二是数据量大，需要有标准协议支持断点续传。经过调查之后，选定青云和华为云都支持的“对象存储”服务来作为迁移工具。迁移过程分三步走：</p>
+
+<ol>
+<li>青云服务器的数据传输到青云对象存储的桶内</li>
+<li>青云对象存储的桶内的数据传输到华为云对象存储的桶内（这一步是跨云传输的关键）</li>
+<li>华为云对象存储的桶内的数据传输到华为云服务器上</li>
+</ol>
+
+<h2 id="环境">环境</h2>
+
+<pre><code>操作系统：CentOS release 6.5 (Final)
+
+确保青云服务器和华为云服务器操作系统及其大小版本号一致，防止出现不可测的问题。
+</code></pre>
+
+<p><br></p>
+
+<h1 id="青云服务器-青云对象存储">青云服务器 -&gt; 青云对象存储</h1>
+
+<h2 id="青云控制台的操作">青云控制台的操作</h2>
+
+<ol>
+<li><p>在服务器所在区域创建对象存储的桶（Bucket）</p>
+
+<pre><code>大数据量传输的时候最好建立多个桶，这样在跨云传输的时候可以并发传输，加快效率。我的环境创建3个桶：aws、mysql、bpa
+</code></pre>
+
+
+
+
+
+
+	
+
+
+
+<figure style="padding: 0.25rem; margin: 2rem 0; background-color: #cccc">
+	<img style="max-width: 100%; height: auto;" src="/blog/2018/11/13/%E9%9D%92%E4%BA%91%E4%B8%BB%E6%9C%BA%E8%BF%81%E7%A7%BB%E5%88%B0%E5%8D%8E%E4%B8%BA%E4%BA%91/%E9%9D%92%E4%BA%91%E6%8E%A7%E5%88%B6%E5%8F%B0-%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8_hu86c2d8f0b7ddd843d8883c4c6b396efa_23556_807x0_resize_box_2.png" width="807" height="114">
+	<figcaption>
+	
+	
+	</figcaption>
+</figure>   </li>
+
+<li><p>提交工单，将从青云到华为云的速度限制调整为10M</p>
+
+<pre><code>这一步是为“青云对象存储 -&gt; 华为云对象存储”步骤做准备，青云端默认的限制速度不详，总之比较慢。华为云端没有速度限制。
+</code></pre></li>
+</ol>
+
+<h2 id="青云服务器的操作">青云服务器的操作</h2>
+
+<ol>
+<li><p>下载qscamel（利用青云提供的工具qscamel将青云服务器内的数据传输到桶内）</p>
+
+<pre><code>wget https://github.com/yunify/qscamel/releases/download/v2.0.5/qscamel_v2.0.5_linux_amd64.tar.gz
+</code></pre></li>
+
+<li><p>解压文件，并重命名为qscamel，该文件可以作为命令直接使用</p>
+
+<pre><code>tar -xzf qscamel_v2.0.5_linux_amd64.tar.gz
+mv qscamel_v2.0.5_linux_amd64.tar.gz qscamel
+</code></pre></li>
+
+<li><p>停止可能产生数据的服务，防止迁移以后产生新文件导致数据不全。</p>
+
+<pre><code>我的环境停止aws、mysql、bpa
+service mysql stop
+</code></pre></li>
+
+<li><p>查看服务器可用的硬盘容量是否足够，防止下面的打包步骤失败。</p></li>
+
+<li><p>将需要传输的文件打包为压缩文件</p>
+
+<pre><code>打包后有两个优点，一个是比零散文件传输的快，第二个是方便计算文件的签名。计算签名的作用是确保文件在传输过程中没有丢数据。
+tar -czf 文件名.tar.gz 压缩的文件夹名
+</code></pre></li>
+
+<li><p>创建yaml格式的任务文件</p>
+
+<pre><code>传输的任务文件为yaml格式的，需要填入原路径、目的路径、桶名称、公钥、私钥等信息，详见：https://docs.qingcloud.com/qingstor/developer_tools/qscamel.html#%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8
+</code></pre></li>
+
+<li><p>临时将服务器的带宽加大，传输完毕后恢复回去</p>
+
+<pre><code>青云客服说同一区域内的服务器和桶进行传输是内网速度，能达到2g。但是我使用的时候不是这种情况，所以临时将服务器的带宽加大到配额内的最大值，待传输完毕后恢复回去。如果配额内的最大值还是不够大，可以提交工单申请修改配额。
+</code></pre></li>
+
+<li><p>开始传输任务</p>
+
+<pre><code>qscamel run task-name -t example-task.yaml
+1、task-name是本次传输任务的名字，也是断点续传的识别名称。
+2、如果想同时传输多个任务，需要用 -c 指定配置文件，因为单个任务传输能占满带宽，所以我没有使用多任务传输，配置文件如何编写详见：https://docs.qingcloud.com/qingstor/developer_tools/qscamel.html#%E9%85%8D%E7%BD%AE
+</code></pre></li>
+
+<li><p>传输完毕后，控制台会提示，然后去青云的控制台去看桶内是否已经有相同大小的数据。</p></li>
+</ol>
+
+<p><br></p>
+
+<h1 id="青云对象存储-华为云对象存储">青云对象存储 -&gt; 华为云对象存储</h1>
+
+<h2 id="华为云控制台的操作">华为云控制台的操作</h2>
+
+<ol>
+<li><p>在服务器所在区域内打开“对象存储服务”页面，创建对象存储的桶（Bucket）</p>
+
+<pre><code>分别创建和青云端一一对应的桶。
+建议选择服务器所在区，从华为云对象存储传输到服务器上，在同一区内实测是内网传输，速度非常快。
+桶的存储类别选择：低频访问存储（价格比标准存储便宜，适合传输完毕就删除的场景），其余选项默认即可。
+</code></pre>
+
+
+
+
+
+
+	
+
+
+
+<figure style="padding: 0.25rem; margin: 2rem 0; background-color: #cccc">
+	<img style="max-width: 100%; height: auto;" src="/blog/2018/11/13/%E9%9D%92%E4%BA%91%E4%B8%BB%E6%9C%BA%E8%BF%81%E7%A7%BB%E5%88%B0%E5%8D%8E%E4%B8%BA%E4%BA%91/%E5%8D%8E%E4%B8%BA%E4%BA%91%E6%8E%A7%E5%88%B6%E5%8F%B0-%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8%E5%88%97%E8%A1%A8_hu28e6083f6cfe7c04023070feb724c094_51129_807x0_resize_box_2.png" width="807" height="103">
+	<figcaption>
+	
+	
+	</figcaption>
+</figure>   </li>
+
+<li><p>打开“对象存储迁移服务”页面，注意此服务和“对象存储服务”不同</p></li>
+
+<li><p>分别创建和桶一一对应的传输任务，并开始传输</p>
+
+<pre><code>在创建任务的向导页面，分别填入青云和华为云的公钥、私钥、桶名称即可。
+</code></pre>
+
+<p>任务列表</p>
+
+
+
+
+
+
+	
+
+
+
+<figure style="padding: 0.25rem; margin: 2rem 0; background-color: #cccc">
+	<img style="max-width: 100%; height: auto;" src="/blog/2018/11/13/%E9%9D%92%E4%BA%91%E4%B8%BB%E6%9C%BA%E8%BF%81%E7%A7%BB%E5%88%B0%E5%8D%8E%E4%B8%BA%E4%BA%91/%E5%8D%8E%E4%B8%BA%E4%BA%91%E6%8E%A7%E5%88%B6%E5%8F%B0-%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8%E8%BF%81%E7%A7%BB%E5%88%97%E8%A1%A8_hu9a9fbcee93a46c5aa80d6157354343da_78423_807x0_resize_box_2.png" width="807" height="337">
+	<figcaption>
+	
+	
+	</figcaption>
+</figure>   
+
+<p>任务详情
+
+
+
+
+
+	
+
+
+
+<figure style="padding: 0.25rem; margin: 2rem 0; background-color: #cccc">
+	<img style="max-width: 100%; height: auto;" src="/blog/2018/11/13/%E9%9D%92%E4%BA%91%E4%B8%BB%E6%9C%BA%E8%BF%81%E7%A7%BB%E5%88%B0%E5%8D%8E%E4%B8%BA%E4%BA%91/%E5%8D%8E%E4%B8%BA%E4%BA%91%E6%8E%A7%E5%88%B6%E5%8F%B0-%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8%E8%BF%81%E7%A7%BB%E4%BB%BB%E5%8A%A1%E8%AF%A6%E6%83%85_huc03eeb9da7e5bd927a6a707cb86f4a30_65138_807x0_resize_box_2.png" width="807" height="179">
+	<figcaption>
+	
+	
+	</figcaption>
+</figure>   </p></li>
+
+<li><p>传输完毕后检查华为云对象存储的桶内是否有相同大小的数据。上图可见传输速度还是很可观的。</p></li>
+</ol>
+
+<p><br></p>
+
+<h1 id="华为云对象存储-华为云服务器">华为云对象存储 -&gt; 华为云服务器</h1>
+
+<h2 id="华为云服务器的操作">华为云服务器的操作</h2>
+
+<pre><code>华为云对象存储和服务器之间的传输工具名为obscmd，其安装要比青云复杂不少，华为云传输软件obscmd所依赖的软件环境跟服务器现有环境的差别。obscmd需要的python最低版本为2.7.9，但是centos6.5自带的python版本为2.6.6。如果你的环境符合此该条件，请忽略安装python的步骤。
+</code></pre>
+
+<ol>
+<li><p>安装openssl（python需要），详细参见：<a href="https://support.huaweicloud.com/clientogl-obs/obs_02_0422.html">https://support.huaweicloud.com/clientogl-obs/obs_02_0422.html</a></p>
+
+<pre><code>wget https://www.openssl.org/source/openssl-1.0.2n.tar.gz
+tar -xvf  openssl-1.0.2n.tar.gz    // 解压到当前目录
+cd openssl-1.0.2n    // 进入解压后的目录
+./config -fPIC  // 进行配置
+make &amp;&amp; make install // 编译并安装openssl
+rm /usr/bin/openssl  // 删除之前的openssl PATH变量
+ln -s /usr/local/ssl/bin/openssl /usr/bin/openssl  //创建新的openssl版本路径
+openssl version // 验证安装
+</code></pre></li>
+
+<li><p>安装openssl-devel</p>
+
+<pre><code>yum -y install openssl-devel
+</code></pre></li>
+
+<li><p>升级python2.6.6到2.7.14（obscmd需要的版本最低为2.7.9，centos6.5自带的为2.6.6），详细参见：<a href="https://www.cnblogs.com/cuijianxin/p/6408757.html，请注意该文章内的版本为2.7.6，将其替换为2.7.14，否则不符合最低版本要求">https://www.cnblogs.com/cuijianxin/p/6408757.html，请注意该文章内的版本为2.7.6，将其替换为2.7.14，否则不符合最低版本要求</a></p>
+
+<pre><code>wget https://www.python.org/ftp/python/2.7.14/Python-2.7.14.tgz //下载Python-2.7.14
+tar  vxf Python-2.7.6.tgz // 解压
+cd Python-2.7.14 // 更改工作目录
+./configure --prefix=/usr/local // 安装
+make &amp;&amp; make install // 安装
+/usr/local/bin/python2.7 -V // 查看版本信息
+mv /usr/bin/python /usr/bin/python2.6.6 // 建立软连接,使系统默认的 python指向 python2.7
+ln -s /usr/local/bin/python2.7 /usr/bin/python 
+python -V // 重新检验Python 版本
+</code></pre></li>
+
+<li><p>下载obscmd，并解压</p>
+
+<pre><code>wget http://static.huaweicloud.com/upload/files/obs/cmd.zip
+unzip cmd.zip
+</code></pre></li>
+
+<li><p>配置传输所需的配置文件config.dat，详情参见：<a href="https://support.huaweicloud.com/clientogl-obs/obs_02_0270.html">https://support.huaweicloud.com/clientogl-obs/obs_02_0270.html</a></p>
+
+<table>
+<thead>
+<tr>
+<th>配置项</th>
+<th>名称</th>
+<th>备注</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>DownloadTarget</td>
+<td>待下载的OBS桶内目标</td>
+<td>留空，全部下载</td>
+</tr>
+
+<tr>
+<td>SavePath</td>
+<td>本地保存路径</td>
+<td>和青云服务器的保存路径一致</td>
+</tr>
+
+<tr>
+<td>Operation</td>
+<td>指定对文件的操作类型</td>
+<td>必填，可选Upload、Download。</td>
+</tr>
+
+<tr>
+<td>AK</td>
+<td>Access Key ID接入键标识</td>
+<td>必填</td>
+</tr>
+
+<tr>
+<td>SK</td>
+<td>Secret Access Key安全接入键</td>
+<td>必填</td>
+</tr>
+
+<tr>
+<td>BucketNameFixed</td>
+<td>桶名</td>
+<td>必填</td>
+</tr>
+</tbody>
+</table>
+
+<pre><code>每次任务的传输配置不同的地方仅仅在于桶名(BucketNameFixed)不一致，其余参数相同
+</code></pre></li>
+
+<li><p>开始传输</p>
+
+<pre><code>进入到obscmd目录，输入命令开始传输：
+cd obscmd
+python run.py
+</code></pre></li>
+
+<li><p>检查传输的文件是否一致</p>
+
+<pre><code>分别在青云服务器和华为云服务器使用摘要命令计算传输的文件是否一致，如果一致才说明传输的文件是完整的。
+sha512sum 文件名
+</code></pre></li>
+</ol>
+
+                        </div>
+                        
+                        
+                        
+                        
+
+    <div class="row" > 
+        <div id="donate" style="margin: 40px 0;">
+
+        </div>
+    </div>
+
+
+                        
+                        
+
+                    </div>
+                    
+
+                    
+
+                    
+
+                    <div class="col-md-3">
+
+                        
+
+                        
+
+<aside id="tocAside" class="toc affix-top" data-spy="affix" data-offset-top="120" data-offset-bottom="60">
+    <header>
+    <h2 style="text-align: center;">目录</h2>
+    </header>
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#前言">前言</a>
+<ul>
+<li><a href="#环境">环境</a></li>
+</ul></li>
+<li><a href="#青云服务器-青云对象存储">青云服务器 -&gt; 青云对象存储</a>
+<ul>
+<li><a href="#青云控制台的操作">青云控制台的操作</a></li>
+<li><a href="#青云服务器的操作">青云服务器的操作</a></li>
+</ul></li>
+<li><a href="#青云对象存储-华为云对象存储">青云对象存储 -&gt; 华为云对象存储</a>
+<ul>
+<li><a href="#华为云控制台的操作">华为云控制台的操作</a></li>
+</ul></li>
+<li><a href="#华为云对象存储-华为云服务器">华为云对象存储 -&gt; 华为云服务器</a>
+<ul>
+<li><a href="#华为云服务器的操作">华为云服务器的操作</a></li>
+</ul></li>
+</ul>
+</nav>
+</aside>
+
+                        
+                        
+
+                    </div>
+                    
+
+                    
+
+                </div>
+                
+                
+            </div>
+            
+        </div>
+        
+
+        
+
+<div id="copyright">
+    <div class="container">
+        <div class="col-md-12">
+            
+            <p class="pull-left">版权声明：自由转载-非商用-非衍生-保持署名（创意共享3.0许可证）</p>
+            
+            <p class="pull-right">
+              模板来自 <a href="http://bootstrapious.com/free-templates">Bootstrapious</a>.
+              
+
+              Power by Hugo, Theme  <a href="https://github.com/willardwang/hugo-universal-blog-theme">universal-blog</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+    </div>
+    
+
+    
+<script src="//code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0/jquery.counterup.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-parallax/1.1.3/jquery-parallax.js"></script>
+<script src="https://www.wangyuanyou.com/js/front.js"></script>
+
+
+<script src="https://www.wangyuanyou.com/js/owl.carousel.min.js"></script>
+
+
+
+<script src="https://www.wangyuanyou.com/js/donate.js"></script>
+<script>
+    new vdonate({
+        title: '一毛钱不嫌少~\x3c\/br\x3e您的支持是我创作的动力，谢谢~', 
+        btnText: '赏', 
+        el: document.getElementById('donate'), 
+        wechatImage: 'https:\/\/www.wangyuanyou.com\/\/img\/wechat.jpg', 
+        alipayImage: 'https:\/\/www.wangyuanyou.com\/\/img\/alipay.jpg' 
+    });
+</script>
+
+
+
+  </body>
+</html>

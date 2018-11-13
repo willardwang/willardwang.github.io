@@ -171,3 +171,26 @@ pre{
 .intro{
   font-size: 14px;
 }
+
+/* 表格 */
+#post-content table {
+  color:#333333;
+  border-collapse: collapse;
+  width: 100%;
+  margin-top:20px;
+  margin-bottom:20px;
+}
+#post-content table th {
+  border-width: 1px;
+  padding: 8px;
+  border-style: solid;
+  border-color: #bcbcbc;
+  background-color: #dedede;
+}
+#post-content table td {
+  border-width: 1px;
+  padding: 8px;
+  border-style: solid;
+  border-color: #d3d3d3;
+  background-color: #ffffff;
+}
