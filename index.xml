@@ -6,10 +6,19 @@
     <description>Recent content on 王石宝的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 13 Nov 2018 16:10:15 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 14 Nov 2018 10:34:06 +0800</lastBuildDate>
     
 	<atom:link href="https://www.wangyuanyou.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>基于CentOS6.5对MySQL5.6进行整体迁移</title>
+      <link>https://www.wangyuanyou.com/blog/2018/11/14/%E5%9F%BA%E4%BA%8ECentOS6.5%E5%AF%B9MySQL5.6%E8%BF%9B%E8%A1%8C%E6%95%B4%E4%BD%93%E8%BF%81%E7%A7%BB/</link>
+      <pubDate>Wed, 14 Nov 2018 10:34:06 +0800</pubDate>
+      
+      <guid>https://www.wangyuanyou.com/blog/2018/11/14/%E5%9F%BA%E4%BA%8ECentOS6.5%E5%AF%B9MySQL5.6%E8%BF%9B%E8%A1%8C%E6%95%B4%E4%BD%93%E8%BF%81%E7%A7%BB/</guid>
+      <description>MySQL整体迁移（所有数据库同时迁移）是客户业务系统迁移的一部分，前提是MySQL数据（由MySQL variable datadir指定的目录）已经迁移到新系统了（迁移过程详见：青云主机迁移到华为云），本文继续新服务器上的MySQL安装以及配置，包括最核心的地方——数据如何导入到新数据库里。 环</description>
+    </item>
     
     <item>
       <title>青云主机迁移到华为云</title>
@@ -17,7 +26,7 @@
       <pubDate>Tue, 13 Nov 2018 16:10:15 +0800</pubDate>
       
       <guid>https://www.wangyuanyou.com/blog/2018/11/13/%E9%9D%92%E4%BA%91%E4%B8%BB%E6%9C%BA%E8%BF%81%E7%A7%BB%E5%88%B0%E5%8D%8E%E4%B8%BA%E4%BA%91/</guid>
-      <description>客户的业务系统原来部署在青云上，根据客户公司战略要求需要将其迁移到华为云上。工作主要划分为两类：海量数据的迁移以及服务器环境、软件环境的复制，在软件环境中尤其以MySQL数据库的数据恢复最需慎重。本文为前一类：海量数据的迁移。服务器环境、软件环境的复制请见文章： 前言 &amp;nbsp;&amp;</description>
+      <description>客户的业务系统原来部署在青云上，根据客户公司战略要求需要将其迁移到华为云上。工作主要划分为两类：海量数据的迁移以及服务器环境、软件环境的复制，在软件环境中尤其以MySQL数据库的数据恢复最需慎重。本文为前一类：海量数据的迁移。服务器环境、软件环境的复制请见文章：基于CentOS6</description>
     </item>
     
     <item>

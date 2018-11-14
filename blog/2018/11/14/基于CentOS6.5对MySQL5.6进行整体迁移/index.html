@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>基于CentOS6.5对MySQL5.6进行整体迁移</title>
+  <meta name="author" content="" />
+
+  
+  <meta name="keywords" content="王石宝, blog">	
+  
+
+  
+  <meta name="description" content="王石宝的博客">	
+  
+
+  <meta name="generator" content="Hugo 0.49.2" />
+
+  
+  
+  <link href="/css/fonts.googleapis.css" rel='stylesheet' type='text/css'>
+
+  
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  
+  <link href="/css/animate.css" rel="stylesheet">
+
+  
+  
+    <link href="/css/style.blue.css" rel="stylesheet" id="theme-stylesheet">
+  
+
+
+  
+  <link href="/css/custom.css" rel="stylesheet">
+
+  
+  
+  
+    <link href="/css/donate.css" rel="stylesheet">
+  
+  
+
+  
+  
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+  <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="/img/apple-touch-icon.png" />
+  
+
+  <link href="/css/owl.carousel.css" rel="stylesheet">
+  <link href="/css/owl.theme.css" rel="stylesheet">
+
+  <link rel="alternate" href="https://www.wangyuanyou.com/index.xml" type="application/rss+xml" title="王石宝的博客">
+
+  
+  <meta property="og:title" content="基于CentOS6.5对MySQL5.6进行整体迁移" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="/blog/2018/11/14/%E5%9F%BA%E4%BA%8ECentOS6.5%E5%AF%B9MySQL5.6%E8%BF%9B%E8%A1%8C%E6%95%B4%E4%BD%93%E8%BF%81%E7%A7%BB//" />
+  <meta property="og:image" content="img/logo.png" />
+
+</head>
+
+
+  <body>
+
+    <div id="all">
+
+        <header>
+
+          <div class="navbar-affixed-top" data-spy="affix" data-offset-top="200">
+
+    <div class="navbar navbar-default yamm" role="navigation" id="navbar">
+
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand home" href="https://www.wangyuanyou.com/" style="padding: 0; position: relative; top: 4px;">
+                    <img src="https://www.wangyuanyou.com/img/logo.png" style="width: auto; height: auto; max-width: 100%; max-height: 100%;" alt="基于CentOS6.5对MySQL5.6进行整体迁移 logo" class="hidden-xs hidden-sm">
+                    <img src="https://www.wangyuanyou.com/img/logo-small.png" style="width: auto; height: auto; max-width: 100%; max-height: 100%; position: relative; top: -4px;" alt="基于CentOS6.5对MySQL5.6进行整体迁移 logo" class="visible-xs visible-sm">
+                    <span class="sr-only">基于CentOS6.5对MySQL5.6进行整体迁移 - 跳到主页</span>
+                </a>
+                <div class="navbar-buttons">
+                    <button type="button" class="navbar-toggle btn-template-main" data-toggle="collapse" data-target="#navigation">
+                      <span class="sr-only">切换导航</span>
+                        <i class="fa fa-align-justify"></i>
+                    </button>
+                </div>
+            </div>
+            
+
+            <div class="navbar-collapse collapse" id="navigation">
+                <ul class="nav navbar-nav navbar-right">
+                  
+                  <li class="dropdown">
+                    
+                    <a href="/">首页</a>
+                    
+                  </li>
+                  
+                  <li class="dropdown">
+                    
+                    <a href="/blog/">博客</a>
+                    
+                  </li>
+                  
+                  <li class="dropdown">
+                    
+                    <a href="/about/">关于</a>
+                    
+                  </li>
+                  
+                </ul>
+            </div>
+            
+
+            <div class="collapse clearfix" id="search">
+
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                        <span class="input-group-btn">
+
+                    <button type="submit" class="btn btn-template-main"><i class="fa fa-search"></i></button>
+
+                </span>
+                    </div>
+                </form>
+
+            </div>
+            
+
+        </div>
+    </div>
+    
+
+</div>
+
+
+
+
+        </header>
+
+        <div id="heading-breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>基于CentOS6.5对MySQL5.6进行整体迁移</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+        <div id="content">
+            <div class="container">
+
+                <div class="row">
+
+                    
+
+                    <div class="col-md-9" id="blog-post">
+
+                        <p class="text-muted text-uppercase mb-small text-right">2018/11/14</p>
+
+                        <div id="post-content">
+                          
+
+<blockquote>
+<p>MySQL整体迁移（所有数据库同时迁移）是客户业务系统迁移的一部分，前提是MySQL数据（由MySQL variable datadir指定的目录）已经迁移到新系统了（迁移过程详见：<a href="/blog/2018/11/13/青云主机迁移到华为云/">青云主机迁移到华为云</a>），本文继续新服务器上的MySQL安装以及配置，包括最核心的地方——数据如何导入到新数据库里。</p>
+</blockquote>
+
+<h1 id="环境">环境</h1>
+
+<pre><code>操作系统：CentOS release 6.5 (Final)
+MySQL：5.6.21
+</code></pre>
+
+<p><br></p>
+
+<h1 id="安装">安装</h1>
+
+<ol>
+<li><p>检测是否安装了MySQL</p>
+
+<pre><code>yum list installed | grep mysql
+</code></pre></li>
+
+<li><p>如果有MySQL，则卸载</p>
+
+<pre><code>yum -y remove mysql-libs.x86_64
+</code></pre></li>
+
+<li><p>下载MySQL</p>
+
+<pre><code>wget http://dev.mysql.com/Downloads/MySQL-5.6/MySQL-client-5.6.21-1.rhel5.x86_64.rpm
+wget http://dev.mysql.com/Downloads/MySQL-5.6/MySQL-server-5.6.21-1.rhel5.x86_64.rpm
+</code></pre></li>
+
+<li><p>安装MySQL</p>
+
+<pre><code>rpm -ivh MySQL-client-5.6.21-1.rhel5.x86_64.rpm
+rpm -ivh MySQL-server-5.6.21-1.rhel5.x86_64.rpm
+注意：
+    1、安装server后，会在/root/.mysql_secret里存放一个随机的默认密码
+    2、默认开机启动，使用chkconfig查看
+</code></pre></li>
+
+<li><p>启动MySQL</p>
+
+<pre><code>service mysql start
+</code></pre></li>
+
+<li><p>进行MySQL的初始化</p>
+
+<pre><code>/usr/bin/mysql_secure_installation --user=root // 注意：这里使用的是MySQL并不建议使用的root用户
+按照向导进行一些配置：
+   1、修改密码
+   2、Remove anonymous users? [Y/n] y  // 删除匿名用户
+   3、Disallow root login remotely? [Y/n] n // 允许远程登录
+   4、Remove test database and access to it? [Y/n] y // 删除测试数据库
+   Reload privilege tables now? [Y/n] Y // 立即重新加载权限表
+</code></pre>
+
+<p><br></p></li>
+</ol>
+
+<h1 id="配置">配置</h1>
+
+<ol>
+<li><p>将MySQL数据文件提前放到指定位置</p>
+
+<pre><code>因为原服务器指定的MySQL数据的存放位置为/data/mysql，所以将新服务器的数据也存放到该位置。
+经过对象存储传输后的文件权限信息也自动和原服务器保持了一致。
+</code></pre>
+
+
+
+
+
+
+	
+
+
+
+<figure style="padding: 0.25rem; margin: 2rem 0; background-color: #cccc">
+	<img style="max-width: 100%; height: auto;" src="/blog/2018/11/14/%E5%9F%BA%E4%BA%8ECentOS6.5%E5%AF%B9MySQL5.6%E8%BF%9B%E8%A1%8C%E6%95%B4%E4%BD%93%E8%BF%81%E7%A7%BB/mysql%E6%96%87%E4%BB%B6%E5%88%97%E8%A1%A8_hu87450dd85138cc6e41f45f92cc4b4a33_270047_807x0_resize_box_2.png" width="807" height="534">
+	<figcaption>
+	
+	
+	</figcaption>
+</figure>   </li>
+
+<li><p>登录MySQL</p>
+
+<pre><code>使用上面重置的密码登录MySQL
+mysql -uroot -p
+</code></pre></li>
+
+<li><p>在进行配置之前先比较配置的差异，做到心中有数</p>
+
+<pre><code>分别在两个系统中利用show variables命令导出配置，然后利用beyond compare对比差异。
+根据下图可见，左侧红色差异标记为24项
+</code></pre>
+
+
+
+
+
+
+	
+
+
+
+<figure style="padding: 0.25rem; margin: 2rem 0; background-color: #cccc">
+	<img style="max-width: 100%; height: auto;" src="/blog/2018/11/14/%E5%9F%BA%E4%BA%8ECentOS6.5%E5%AF%B9MySQL5.6%E8%BF%9B%E8%A1%8C%E6%95%B4%E4%BD%93%E8%BF%81%E7%A7%BB/variables%E5%AF%B9%E6%AF%94%E5%9B%BE-%E5%89%8D_hu747f16ca5665fe5476d0e6a124b4d9e4_287806_807x0_resize_box_2.png" width="807" height="362">
+	<figcaption>
+	
+	
+	</figcaption>
+</figure>   </li>
+
+<li><p>复利原服务器下的/etc/my.cnf到新服务器的相同位置</p>
+
+<pre><code>  MySQL会默认使用该位置下的my.cnf配置文件。
+</code></pre></li>
+
+<li><p>再次重复1中的步骤，比较配置差异</p>
+
+<pre><code>根据下图可见，左侧红色差异减少为8项，其中5项为服务器名称修改后的正常差异，比如：
+hostname         从 i-bxf89yzg       变为 ecs-5fa6.novalocal
+general_log_file 从 general_log_file 变为 /data/mysql/ecs-5fa6.log
+另外3项差异为open_files_limit、pseudo_thread_id和timestamp，下面专门探讨
+</code></pre>
+
+
+
+
+
+
+	
+
+
+
+<figure style="padding: 0.25rem; margin: 2rem 0; background-color: #cccc">
+	<img style="max-width: 100%; height: auto;" src="/blog/2018/11/14/%E5%9F%BA%E4%BA%8ECentOS6.5%E5%AF%B9MySQL5.6%E8%BF%9B%E8%A1%8C%E6%95%B4%E4%BD%93%E8%BF%81%E7%A7%BB/variables%E5%AF%B9%E6%AF%94%E5%9B%BE-%E5%90%8E_hucdf6c2ff5f9ffcba63488c346835bb8e_338719_807x0_resize_box_2.png" width="807" height="347">
+	<figcaption>
+	
+	
+	</figcaption>
+</figure>   </li>
+
+<li><p>variable差异：open_files_limit，从 65536 变为 5010</p>
+
+<pre><code>The number of files that the operating system permits mysqld to open. 
+1) 10 + max_connections + (table_open_cache * 2)
+2) max_connections * 5
+3) operating system limit if positive
+The server attempts to obtain the number of file descriptors using the maximum of those three values.
+</code></pre>
+
+<pre><code>MySQL文档显示，这是操作系统允许mysqld进程打开的文件数量，MySQL会取以上3个值的最大值。根据此规则，分别查询max_connections和table_open_cache值，如下表：
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th>max_connections</th>
+<th>table_open_cache</th>
+<th>按照公式计算后</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>原服务器</td>
+<td>1000</td>
+<td>2000</td>
+<td>5010</td>
+</tr>
+
+<tr>
+<td>新服务器</td>
+<td>1000</td>
+<td>2000</td>
+<td>5010</td>
+</tr>
+</tbody>
+</table>
+
+<pre><code>根据上表可知，两服务器根据max_connections和table_open_cache所计算的值均为5010，但是实际原服务器为65536，新服务器为5010，这就说明是第3)条规则起了作用（取最大值），即操作系统限制的值，所以调整新服务器的操作系统限制的值即可。(其实根据my.cnf配置文件一模一样也可分析出是操作系统层面的原因导致的)，请见如下两种方式：
+</code></pre>
+
+<pre><code>方式1：使用开机启动执行命令的方式
+vim /etc/rc.local
+添加
+ulimit -HSn 65536
+service mysql restart
+</code></pre>
+
+<pre><code>方式2：修改配置文件的方式
+vim /etc/security/limits.conf  
+添加
+;* soft nofile 65535
+;* hard nofile 65535
+*代表用户，全部用户或用户组(由于Markdown语法原因，无法书写出独立的星号，请去除上方两行的;)
+    
+注意：网上许多文档都是这种方式，但是我的场景下不生效，未知原因。如果你的场景下此方法生效的话，请使用此方法，修改配置文件的方式优于使用开机启动执行命令的方式。
+</code></pre></li>
+
+<li><p>variable差异：pseudo_thread_id</p>
+
+<pre><code>This variable is for internal server use.
+</code></pre>
+
+<pre><code>MySQL文档显示，这是一个系统变量，用于标记当前会话的连接ID，所以差异为正常差异。
+</code></pre></li>
+
+<li><p>variable差异：timestamp</p>
+
+<pre><code>Set the time for this client. 
+</code></pre>
+
+<pre><code>MySQL文档显示，这是客户端的时间戳，由于导出variable时的时间不同，所以此差异为正常差异。
+</code></pre></li>
+
+<li><p>重启后弱报数据库是lock状态的话删除lock文件重启MySQL即可，如果不行就重启服务器</p>
+
+<pre><code>rm -rf /var/lock/subsys/mysql
+</code></pre></li>
+</ol>
+
+                        </div>
+                        
+                        
+                        
+                        
+
+    <div class="row" > 
+        <div id="donate" style="margin: 40px 0;">
+
+        </div>
+    </div>
+
+
+                        
+                        
+
+                    </div>
+                    
+
+                    
+
+                    
+
+                    <div class="col-md-3">
+
+                        
+
+                        
+
+<aside id="tocAside" class="toc affix-top" data-spy="affix" data-offset-top="120" data-offset-bottom="60">
+    <header>
+    <h2 style="text-align: center;">目录</h2>
+    </header>
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#环境">环境</a></li>
+<li><a href="#安装">安装</a></li>
+<li><a href="#配置">配置</a></li>
+</ul>
+</nav>
+</aside>
+
+                        
+                        
+
+                    </div>
+                    
+
+                    
+
+                </div>
+                
+                
+            </div>
+            
+        </div>
+        
+
+        
+
+<div id="copyright">
+    <div class="container">
+        <div class="col-md-12">
+            
+            <p class="pull-left">版权声明：自由转载-非商用-非衍生-保持署名（创意共享3.0许可证）</p>
+            
+            <p class="pull-right">
+              模板来自 <a href="http://bootstrapious.com/free-templates">Bootstrapious</a>.
+              
+
+              Power by Hugo, Theme  <a href="https://github.com/willardwang/hugo-universal-blog-theme">universal-blog</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+    </div>
+    
+
+    
+<script src="//code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0/jquery.counterup.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-parallax/1.1.3/jquery-parallax.js"></script>
+<script src="https://www.wangyuanyou.com/js/front.js"></script>
+
+
+<script src="https://www.wangyuanyou.com/js/owl.carousel.min.js"></script>
+
+
+
+<script src="https://www.wangyuanyou.com/js/donate.js"></script>
+<script>
+    new vdonate({
+        title: '一毛钱不嫌少~\x3c\/br\x3e您的支持是我创作的动力，谢谢~', 
+        btnText: '赏', 
+        el: document.getElementById('donate'), 
+        wechatImage: 'https:\/\/www.wangyuanyou.com\/\/img\/wechat.jpg', 
+        alipayImage: 'https:\/\/www.wangyuanyou.com\/\/img\/alipay.jpg' 
+    });
+</script>
+
+
+
+  </body>
+</html>

@@ -194,3 +194,8 @@ pre{
   border-color: #d3d3d3;
   background-color: #ffffff;
 }
+
+/* 覆盖，不要将文字大写 */
+#heading-breadcrumbs h1{
+  text-transform: none;
+}
