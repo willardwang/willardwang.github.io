@@ -400,10 +400,21 @@ ln -s /usr/local/bin/python2.7 /usr/bin/python
 python -V // 重新检验Python 版本
 </code></pre></li>
 
+<li><p>解决系统 Python 软链接指向 Python2.7 版本后，因为yum是不兼容 Python 2.7的，所以yum不能正常工作，我们需要指定 yum 的Python版本</p>
+
+<pre><code>vim /usr/bin/yum
+    
+将文件头部的
+#!/usr/bin/python
+改成
+#!/usr/bin/python2.6.6
+</code></pre></li>
+
 <li><p>下载obscmd，并解压</p>
 
 <pre><code>wget http://static.huaweicloud.com/upload/files/obs/cmd.zip
 unzip cmd.zip
+cd obs-cmd-v4.6.7
 </code></pre></li>
 
 <li><p>配置传输所需的配置文件config.dat，详情参见：<a href="https://support.huaweicloud.com/clientogl-obs/obs_02_0270.html">https://support.huaweicloud.com/clientogl-obs/obs_02_0270.html</a></p>
@@ -419,6 +430,12 @@ unzip cmd.zip
 
 <tbody>
 <tr>
+<td>Operation</td>
+<td>指定对文件的操作类型，填入Download</td>
+<td>必填，可选Upload、Download。</td>
+</tr>
+
+<tr>
 <td>DownloadTarget</td>
 <td>待下载的OBS桶内目标</td>
 <td>留空，全部下载</td>
@@ -428,12 +445,6 @@ unzip cmd.zip
 <td>SavePath</td>
 <td>本地保存路径</td>
 <td>和青云服务器的保存路径一致</td>
-</tr>
-
-<tr>
-<td>Operation</td>
-<td>指定对文件的操作类型</td>
-<td>必填，可选Upload、Download。</td>
 </tr>
 
 <tr>
@@ -462,8 +473,9 @@ unzip cmd.zip
 <li><p>开始传输</p>
 
 <pre><code>进入到obscmd目录，输入命令开始传输：
-cd obscmd
+cd obs-cmd-v4.6.7
 python run.py
+传输结束后提示：[WARN] Terminated after all requests
 </code></pre></li>
 
 <li><p>检查传输的文件是否一致</p>
