@@ -238,29 +238,6 @@ rpm -ivh MySQL-server-5.6.21-1.rhel5.x86_64.rpm
 <h1 id="配置">配置</h1>
 
 <ol>
-<li><p>将MySQL数据文件提前放到指定位置</p>
-
-<pre><code>因为原服务器指定的MySQL数据的存放位置为/data/mysql，所以将新服务器的数据也存放到该位置。
-经过对象存储传输后的文件权限信息也自动和原服务器保持了一致。
-</code></pre>
-
-
-
-
-
-
-	
-
-
-
-<figure style="padding: 0.25rem; margin: 2rem 0; background-color: #cccc">
-	<img style="max-width: 100%; height: auto;" src="/blog/2018/11/14/%E5%9F%BA%E4%BA%8ECentOS6.5%E5%AF%B9MySQL5.6%E8%BF%9B%E8%A1%8C%E6%95%B4%E4%BD%93%E8%BF%81%E7%A7%BB/mysql%E6%96%87%E4%BB%B6%E5%88%97%E8%A1%A8_hu87450dd85138cc6e41f45f92cc4b4a33_270047_807x0_resize_box_2.png" width="807" height="534">
-	<figcaption>
-	
-	
-	</figcaption>
-</figure>   </li>
-
 <li><p>登录MySQL</p>
 
 <pre><code>使用上面重置的密码登录MySQL
@@ -290,12 +267,40 @@ mysql -uroot -p
 	</figcaption>
 </figure>   </li>
 
+<li><p>停止MySQL，防止复制数据文件和配置文件的过程中出错。</p>
+
+<pre><code>service mysql stop
+</code></pre></li>
+
+<li><p>将MySQL数据文件放到指定位置</p>
+
+<pre><code>因为原服务器指定的MySQL数据的存放位置为/data/mysql，所以将新服务器的数据也存放到该位置。
+经过对象存储传输后的文件权限信息也自动和原服务器保持了一致。
+</code></pre>
+
+
+
+
+
+
+	
+
+
+
+<figure style="padding: 0.25rem; margin: 2rem 0; background-color: #cccc">
+	<img style="max-width: 100%; height: auto;" src="/blog/2018/11/14/%E5%9F%BA%E4%BA%8ECentOS6.5%E5%AF%B9MySQL5.6%E8%BF%9B%E8%A1%8C%E6%95%B4%E4%BD%93%E8%BF%81%E7%A7%BB/mysql%E6%96%87%E4%BB%B6%E5%88%97%E8%A1%A8_hu87450dd85138cc6e41f45f92cc4b4a33_270047_807x0_resize_box_2.png" width="807" height="534">
+	<figcaption>
+	
+	
+	</figcaption>
+</figure>   </li>
+
 <li><p>复利原服务器下的/etc/my.cnf到新服务器的相同位置</p>
 
 <pre><code>  MySQL会默认使用该位置下的my.cnf配置文件。
 </code></pre></li>
 
-<li><p>再次重复1中的步骤，比较配置差异</p>
+<li><p>重启MySQL，再次重复1中的步骤，比较配置差异</p>
 
 <pre><code>根据下图可见，左侧红色差异减少为8项，其中5项为服务器名称修改后的正常差异，比如：
 hostname         从 i-bxf89yzg       变为 ecs-5fa6.novalocal
@@ -397,7 +402,13 @@ vim /etc/security/limits.conf
 
 <li><p>重启后弱报数据库是lock状态的话删除lock文件重启MySQL即可，如果不行就重启服务器</p>
 
-<pre><code>rm -rf /var/lock/subsys/mysql
+<pre><code>该问题是复制数据和配置文件的过程中未停止MySQL造成的
+rm -rf /var/lock/subsys/mysql
+</code></pre></li>
+
+<li><p>如果Java局域网连接数据库报错：java.sql.SQLException: null, message from server: “Host ‘xxx’ is not allowed to connect</p>
+
+<pre><code> GRANT ALL PRIVILEGES ON *.* TO 'root'@'Java服务器的内网IP' IDENTIFIED BY 'root的密码' WITH GRANT OPTION;
 </code></pre></li>
 </ol>
 
