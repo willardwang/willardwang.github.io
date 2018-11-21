@@ -6,7 +6,7 @@
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>基于CentOS6.5对MySQL5.6进行整体迁移</title>
+  <title>基于CentOS6.5对MySQL5.6进行整体迁移 - 王石宝的博客</title>
   <meta name="author" content="" />
 
   
@@ -14,7 +14,7 @@
   
 
   
-  <meta name="description" content="王石宝的博客">	
+  <meta name="description" content="基于CentOS6.5对MySQL5.6进行整体迁移 - 王石宝的博客">
   
 
   <meta name="generator" content="Hugo 0.49.2" />
@@ -65,7 +65,7 @@
   <link rel="alternate" href="https://www.wangyuanyou.com/index.xml" type="application/rss+xml" title="王石宝的博客">
 
   
-  <meta property="og:title" content="基于CentOS6.5对MySQL5.6进行整体迁移" />
+  <meta property="og:title" content="基于CentOS6.5对MySQL5.6进行整体迁移 - 王石宝的博客" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="/blog/2018/11/14/%E5%9F%BA%E4%BA%8ECentOS6.5%E5%AF%B9MySQL5.6%E8%BF%9B%E8%A1%8C%E6%95%B4%E4%BD%93%E8%BF%81%E7%A7%BB//" />
   <meta property="og:image" content="img/logo.png" />
@@ -86,9 +86,9 @@
         <div class="container">
             <div class="navbar-header">
                 <a class="navbar-brand home" href="https://www.wangyuanyou.com/" style="padding: 0; position: relative; top: 4px;">
-                    <img src="https://www.wangyuanyou.com/img/logo.png" style="width: auto; height: auto; max-width: 100%; max-height: 100%;" alt="基于CentOS6.5对MySQL5.6进行整体迁移 logo" class="hidden-xs hidden-sm">
-                    <img src="https://www.wangyuanyou.com/img/logo-small.png" style="width: auto; height: auto; max-width: 100%; max-height: 100%; position: relative; top: -4px;" alt="基于CentOS6.5对MySQL5.6进行整体迁移 logo" class="visible-xs visible-sm">
-                    <span class="sr-only">基于CentOS6.5对MySQL5.6进行整体迁移 - 跳到主页</span>
+                    <img src="https://www.wangyuanyou.com/img/logo.png" style="width: auto; height: auto; max-width: 100%; max-height: 100%;" alt="基于CentOS6.5对MySQL5.6进行整体迁移 - 王石宝的博客 logo" class="hidden-xs hidden-sm">
+                    <img src="https://www.wangyuanyou.com/img/logo-small.png" style="width: auto; height: auto; max-width: 100%; max-height: 100%; position: relative; top: -4px;" alt="基于CentOS6.5对MySQL5.6进行整体迁移 - 王石宝的博客 logo" class="visible-xs visible-sm">
+                    <span class="sr-only">基于CentOS6.5对MySQL5.6进行整体迁移 - 王石宝的博客 - 跳到主页</span>
                 </a>
                 <div class="navbar-buttons">
                     <button type="button" class="navbar-toggle btn-template-main" data-toggle="collapse" data-target="#navigation">
@@ -155,7 +155,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1>基于CentOS6.5对MySQL5.6进行整体迁移</h1>
+                <h1>基于CentOS6.5对MySQL5.6进行整体迁移 - 王石宝的博客</h1>
             </div>
         </div>
     </div>
@@ -408,8 +408,11 @@ rm -rf /var/lock/subsys/mysql
 
 <li><p>如果Java局域网连接数据库报错：java.sql.SQLException: null, message from server: “Host ‘xxx’ is not allowed to connect</p>
 
-<pre><code> GRANT ALL PRIVILEGES ON *.* TO 'root'@'Java服务器的内网IP' IDENTIFIED BY 'root的密码' WITH GRANT OPTION;
-</code></pre></li>
+<pre><code>     
+</code></pre>
+
+<p>GRANT ALL PRIVILEGES ON <em>.</em> TO &lsquo;root&rsquo;@&lsquo;Java服务器的内网IP&rsquo; IDENTIFIED BY &lsquo;root的密码&rsquo; WITH GRANT OPTION;
+```</p></li>
 </ol>
 
                         </div>
