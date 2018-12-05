@@ -20,8 +20,70 @@ $(function () {
   counters()
   demo()
   contactForm()
-  
+  zoomImg()
+  //滚动条宽度
+  scrollbarWidth = getScrollbarWidth();
 })
+var scrollbarWidth;
+function getScrollbarWidth() {
+  var odiv = document.createElement('div'),//创建一个div
+      styles = {
+          width: '100px',
+          height: '100px',
+          overflowY: 'scroll'//让他有滚动条
+      }, i, scrollbarWidth;
+  for (i in styles) odiv.style[i] = styles[i];
+  document.body.appendChild(odiv);//把div添加到body中
+  scrollbarWidth = odiv.offsetWidth - odiv.clientWidth;//相减
+  odiv.remove();//移除创建的div
+  return scrollbarWidth;//返回滚动条宽度
+}
+
+/**
+ * 图片放大缩小
+ */
+function zoomImg(){
+  if($('.zoom-modal-container').length == 0){
+    var zoomModalContainer = '';
+    zoomModalContainer += '<div class="zoom-modal-container">';
+    zoomModalContainer += ' <div class="zoom-modal-background">';
+    zoomModalContainer += '   <img src="">';
+    zoomModalContainer += ' </div>';
+    zoomModalContainer += '</div>';
+    $(document.body).append(zoomModalContainer);
+    $('.zoom-modal-container').on('click',function(){
+      zoomImgOut()
+    })
+    $('.zoom-modal-container img').on('click',function(){
+      zoomImgOut()
+    })
+  }
+  $('.zoom-img').each(function(){
+    $(this).on('click',function(){
+      zoomImgIn(this)
+    })
+  })
+}
+
+function zoomImgIn(img){
+  $('.zoom-modal-container img').attr('src', $(img).attr('origin-src'))
+  //隐藏页面的滚动条 1、图片过大时会出现双滚动条 2、直接取消了跨div的页面的传播滚动
+  $(document.body).css('overflow', 'hidden');
+  $(document.body).css('margin-right', scrollbarWidth+'px');
+  $('#navbar').css('margin-right', scrollbarWidth+'px');
+
+  $('.zoom-modal-container').addClass('active')
+}
+function zoomImgOut(){
+  //显示页面的滚动条
+  $(document.body).css('overflow', 'auto');
+  $(document.body).css('margin-right', 0);
+  $('#navbar').css('margin-right', 0);
+
+  $('.zoom-modal-container').removeClass('active')
+
+  $('.zoom-modal-container img').attr('src', '')
+}
 
 // Ajax contact
 function contactForm () {
