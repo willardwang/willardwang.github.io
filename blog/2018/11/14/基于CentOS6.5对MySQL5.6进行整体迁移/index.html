@@ -408,11 +408,8 @@ rm -rf /var/lock/subsys/mysql
 
 <li><p>如果Java局域网连接数据库报错：java.sql.SQLException: null, message from server: “Host ‘xxx’ is not allowed to connect</p>
 
-<pre><code>     
-</code></pre>
-
-<p>GRANT ALL PRIVILEGES ON <em>.</em> TO &lsquo;root&rsquo;@&lsquo;Java服务器的内网IP&rsquo; IDENTIFIED BY &lsquo;root的密码&rsquo; WITH GRANT OPTION;
-```</p></li>
+<pre><code>GRANT ALL PRIVILEGES ON *.* TO 'root'@'Java服务器的内网IP' IDENTIFIED BY 'root的密码' WITH GRANT OPTION;
+</code></pre></li>
 </ol>
 
                         </div>
