@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vue on 王石宝的博客</title>
+    <link>https://www.wangyuanyou.com/tags/vue/</link>
+    <description>Recent content in Vue on 王石宝的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 04 Apr 2019 19:15:17 +0800</lastBuildDate>
+    
+	<atom:link href="https://www.wangyuanyou.com/tags/vue/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>SpringBoot Vue项目 - 王石宝的博客</title>
+      <link>https://www.wangyuanyou.com/blog/2019/04/04/SpringBoot-Vue%E9%A1%B9%E7%9B%AE/</link>
+      <pubDate>Thu, 04 Apr 2019 19:15:17 +0800</pubDate>
+      
+      <guid>https://www.wangyuanyou.com/blog/2019/04/04/SpringBoot-Vue%E9%A1%B9%E7%9B%AE/</guid>
+      <description>业余时间孵化一个后端使用Spring全家桶、前端使用Vue的开源基础管理项目。包含基础的注册、登录、权限验证等功能。该项目是前后端分离的，后端Github : https://github.com/willardwang/springboot-vue。前端Github : https://github.com/willardwang/springboot-vue-front 技术栈 后端 名</description>
+    </item>
+    
+  </channel>
+</rss>

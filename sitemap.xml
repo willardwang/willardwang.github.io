@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.wangyuanyou.com/blog/2019/04/04/SpringBoot-Vue%E9%A1%B9%E7%9B%AE/</loc>
+    <lastmod>2019-04-04T19:15:17+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.wangyuanyou.com/blog/2018/11/14/%E5%9F%BA%E4%BA%8ECentOS6.5%E5%AF%B9MySQL5.6%E8%BF%9B%E8%A1%8C%E6%95%B4%E4%BD%93%E8%BF%81%E7%A7%BB/</loc>
     <lastmod>2018-11-14T10:34:06+08:00</lastmod>
   </url>
@@ -39,8 +44,26 @@
   </url>
   
   <url>
+    <loc>https://www.wangyuanyou.com/tags/spring/</loc>
+    <lastmod>2019-04-04T19:15:17+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.wangyuanyou.com/tags/</loc>
     <lastmod>2018-10-29T17:44:18+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.wangyuanyou.com/tags/vue/</loc>
+    <lastmod>2019-04-04T19:15:17+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.wangyuanyou.com/categories/%E5%BC%80%E5%8F%91/</loc>
+    <lastmod>2019-04-04T19:15:17+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -56,7 +79,7 @@
   
   <url>
     <loc>https://www.wangyuanyou.com/</loc>
-    <lastmod>2018-11-14T10:34:06+08:00</lastmod>
+    <lastmod>2019-04-04T19:15:17+08:00</lastmod>
     <priority>0</priority>
   </url>
   
